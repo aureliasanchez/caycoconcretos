@@ -3,6 +3,10 @@
 
 
 
+.w-color{
+    color: white;
+}
+
 .limp{
     text-decoration: none;
     color: black;
@@ -1267,20 +1271,27 @@ top panel
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
 
+.mil-top-panel.sticky {
+    background-color: #1F282D; /* Nuevo color al hacer scroll */
+}
+
 .mil-top-panel .mil-top-panel-content {
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+    padding: 0 150px;
 }
 
 .mil-top-panel .mil-top-panel-content .mil-logo {
-    display: block;
+    margin-right: 90px; /* Añade un margen derecho para mover el logo */
+    margin-left: auto;  /* Asegura que el logo se alinee a la derecha */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Mueve el logo más a la derecha */
     align-items: center;
 }
+
 
 .mil-top-panel.mil-active {
     background-color: rgba(0, 0, 0, .9);
@@ -1325,6 +1336,7 @@ top panel
     align-items: center;
     margin-right: 30px;
     list-style-type: none;
+    /* color: white; */
 }
 
 .mil-navigation nav ul li a {
