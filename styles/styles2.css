@@ -227,6 +227,10 @@ h6,
     text-transform: uppercase;
 }
 
+.big-leter{
+    font-size: 40px
+}
+
 .mil-bold {
     font-weight: 600;
 }
@@ -386,6 +390,11 @@ a {
     }
 }
 
+
+.text-justify{
+    text-align: justify;
+}
+
 /* -------------------------------------------
 
 suptitle
@@ -402,8 +411,12 @@ suptitle
 
 @media screen and (max-width: 768px) {
     .mil-suptitle {
-        font-size: 12px;
+        font-size: 18px;
     }
+}
+
+.letter2{
+    font-size: 20px;
 }
 
 .mil-suptitle:after {
@@ -467,7 +480,7 @@ link
 
 @media screen and (max-width: 768px) {
     .mil-link {
-        font-size: 12px;
+        font-size: 18px;
     }
 }
 
@@ -761,6 +774,10 @@ spaces
 
 .mil-mb-40 {
     margin-bottom: 40px;
+}
+
+.mil-mb-help{
+    margin-bottom: 20px;
 }
 
 .mil-mb-60 {

@@ -2,6 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 
+.mil-responsive-image {
+    width: 60%;
+    height: auto;
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    align-self: center;
+}
+
+/* Media query para dispositivos más pequeños */
+@media screen and (max-width: 600px) {
+    .mil-image-container {
+        max-width: 100%; /* Permite que la imagen ocupe todo el ancho en pantallas pequeñas */
+    }
+}
+  
+
+.bg-black{
+    background-color: black;
+}
+
 
 .w-color{
     color: white;
@@ -322,9 +341,9 @@ counters
 .mil-counter-frame {
     font-size: larger;
     width: 100%;
-    border: 5px solid rgba(0, 0, 0, .1);
-    border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(0, 0, 0, .1) 1px, rgba(0, 0, 0, .1) 3px) 5;
-    padding: 15px;
+    /* border: 5px solid rgba(0, 0, 0, .1); */
+    /* border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(0, 0, 0, .1) 1px, rgba(0, 0, 0, .1) 3px) 5; */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -342,7 +361,7 @@ counters
 }
 
 .mil-counter-frame.mil-light {
-    border: 5px solid rgba(255, 255, 255, .2);
+    /* border: 5px solid rgba(255, 255, 255, .2); */
     border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(255, 255, 255, .2) 1px, rgba(255, 255, 255, .2) 3px) 5;
 }
 
@@ -631,6 +650,37 @@ services
     height: 100%;
 }
 
+.mil-service-card-black {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    padding: 60px;
+    border: 5px solid rgba(0, 0, 0, .1);
+    border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(0, 0, 0, .1) 1px, rgba(0, 0, 0, .1) 3px) 5;
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+    height: 100%;
+}
+
+
+.mil-service-card-red {
+    background-color: rgb(152, 17, 17);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    padding: 60px;
+    border: 5px solid rgba(0, 0, 0, .1);
+    border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(0, 0, 0, .1) 1px, rgba(0, 0, 0, .1) 3px) 5;
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+    height: 100%;
+}
+
 .mil-service-card .mil-card-number {
     position: absolute;
     top: 30px;
@@ -662,6 +712,39 @@ services
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
 
+/* hover 1 */
+
+.mil-service-card-black .mil-go-buton {
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 30px);
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+
+.mil-service-card-black:hover {
+    background-color: black;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    border: 5px solid rgb(211, 47, 47);
+    border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgb(211, 47, 47) 1px, rgb(211, 47, 47) 3px) 5;
+}
+
+.mil-service-card-black:hover .mil-service-text {
+    opacity: 0;
+    transform: translateY(15px) scale(.8);
+}
+
+.mil-service-card-black:hover .mil-divider-sm {
+    background-color: rgb(211, 47, 47);
+}
+
+.mil-service-card-black:hover .mil-go-buton {
+    bottom: 0;
+}
+
+/* end hover 1 */
+
 .mil-service-card:hover {
     background-color: rgba(255, 255, 255, 1);
     padding-top: 80px;
@@ -682,6 +765,41 @@ services
 .mil-service-card:hover .mil-go-buton {
     bottom: 0;
 }
+
+
+
+/* hover 3 */
+
+.mil-service-card-red .mil-go-buton {
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 30px);
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+
+.mil-service-card-red:hover {
+    background-color: rgb(152, 17, 17);
+    padding-top: 80px;
+    padding-bottom: 40px;
+    border: 5px solid rgb(211, 47, 47);
+    border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgb(211, 47, 47) 1px, rgb(211, 47, 47) 3px) 5;
+}
+
+.mil-service-card-red:hover .mil-service-text {
+    opacity: 0;
+    transform: translateY(15px) scale(.8);
+}
+
+.mil-service-card-red:hover .mil-divider-sm {
+    background-color: rgb(211, 47, 47);
+}
+
+.mil-service-card-red:hover .mil-go-buton {
+    bottom: 0;
+}
+
+/* end hover 3 */
 
 /* -------------------------------------------
 
@@ -1281,12 +1399,12 @@ top panel
     justify-content: space-between;
     align-items: center;
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
-    padding: 0 150px;
+    padding: 0 170px;
 }
 
 .mil-top-panel .mil-top-panel-content .mil-logo {
-    margin-right: 90px; /* Añade un margen derecho para mover el logo */
-    margin-left: auto;  /* Asegura que el logo se alinee a la derecha */
+    /* margin-right: 90px; Añade un margen derecho para mover el logo */
+    /* margin-left: auto;  Asegura que el logo se alinee a la derecha */
     display: flex;
     justify-content: space-between; /* Mueve el logo más a la derecha */
     align-items: center;

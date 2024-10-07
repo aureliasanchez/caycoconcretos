@@ -56,3 +56,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('videoModal');
+    const videoLinks = document.querySelectorAll('.has-popup-video');
+    const closeBtn = document.querySelector('.mil-close');
+    const iframe = document.getElementById('youtubeIframe');
+
+    function openModal() {
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            iframe.src = '';
+        }, 300); // Espera a que termine la animación antes de ocultar el modal
+    }
+
+    videoLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const videoId = this.getAttribute('data-video-id');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            openModal();
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    window.addEventListener('click', function(e) {
+        if (e.target == modal) {
+            closeModal();
+        }
+    });
+});
