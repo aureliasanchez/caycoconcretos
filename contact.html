@@ -1,9 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <title>Contacto | CAYCO</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cayco</title>
+    <meta name="author" content="CAYCO Construcción" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="es-mx" />
+
+    <!-- Descripción de la página -->
+    <meta name="description" content="Contáctanos para cualquier consulta sobre nuestros productos, servicios o para obtener una cotización personalizada en concreto premezclado." />
+
+    <!-- Palabras clave -->
+    <meta name="keywords" content="contacto, CAYCO, soporte, consulta, cotización, concreto premezclado" />
+
+    <!-- URL canónica -->
+    <link rel="canonical" href="https://cayco.netlify.app/contact" />
+
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Contacto | CAYCO" />
+    <meta property="og:description" content="Estamos aquí para responder a tus preguntas y ofrecerte soporte para tus proyectos de construcción." />
+    <meta property="og:url" content="https://cayco.netlify.app/contact" />
+    <meta property="og:image" content="https://cayco.netlify.app/img/logo/logo.png" />
+    <meta property="og:image:alt" content="Logo de CAYCO" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CAYCO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contacto | CAYCO" />
+    <meta name="twitter:description" content="Contáctanos para obtener información y cotizaciones sobre nuestros servicios de concreto." />
+    <meta name="twitter:image" content="https://cayco.netlify.app/img/logo/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cayco.netlify.app/img/logo/logo.png" type="image/png">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/scss/style.scss">
     <link rel="stylesheet" href="styles/css/plugins/bootstrap-grid.css">
@@ -11,6 +42,10 @@
     <link rel="stylesheet" href="styles/css/plugins/magnific-popup.css">
     <link rel="stylesheet" href="styles/styles2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 
@@ -29,15 +64,8 @@
                             <li class="mil-light">
                                 <a href="index.html">Home</a>
                             </li>
-                            <li class="mil-has-children mil-light">
+                            <li class="mil-light">
                                 <a href="services.html">Services</a>
-                                <ul>
-                                    <li><a href="services.html">Nuestros Servicios</a></li>
-                                    <li><a href="service-1.html">Tipos de Concretos</a></li>
-                                    <li><a href="service-2.html">Concretos de Innovación</a></li>
-                                    <li><a href="service-3.html">Bombeo de Materiales</a></li>
-                                    <li><a href="service-4.html">Asesoría y Capacitación</a></li>
-                                </ul>
                             </li>
                             <li class="mil-has-children">
                                 <a href="">Projects</a>
@@ -68,7 +96,7 @@
     
                 <!-- right buttons -->
                 <div class="mil-top-panel-buttons">
-                    <a href="contact.html" class="mil-button mil-sm limp">Gestionar Proyecto</a>
+                    <a href="contact.html#contactForm" class="mil-button mil-sm limp">Gestionar Proyecto</a>
     
                     <div class="mil-menu-btn">
                         <span></span>
@@ -132,12 +160,13 @@
 <div class="mil-map-frame mil-up">
     <div class="mil-map">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1396.5769090312324!2d-73.6519672!3d45.5673453!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91f8abc30e0ff%3A0xfc6d9cbb49022e9c!2sManoir%20Saint-Joseph!5e0!3m2!1sen!2sua!4v1685485811069!5m2!1sen!2sua" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9434.229253381736!2d-98.7874779002205!3d20.037963228426992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a79ba2d4bced%3A0x450fe67a9c1a4894!2sCayco%20Concretos%20Pachuca!5e1!3m2!1sen!2smx!4v1728406845263!5m2!1sen!2smx"
             style="border: 0;" 
             allowfullscreen 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
         </iframe>
+        
     </div>
 </div>
 <!-- map end -->
@@ -145,7 +174,7 @@
 
 
     <!-- {/* contact */} -->
-    <section class="mil-soft-bg mil-relative">
+    <section id="contactForm" class="mil-soft-bg mil-relative">
         <img src="/img/other/bg.svg" class="mil-bg-img" alt="image" />
 
         <div class="container mil-p-120-30">
@@ -170,7 +199,7 @@
 
                 <div class="col-lg-7">
                     <!-- {/* contact form */} -->
-                    <form id="contactForm" action="YOUR_FORM_URL_HERE" method="POST" class="mil-mb-90 cform">
+                    <form id="FormContact" class="mil-mb-90 cform">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
@@ -228,7 +257,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="mil-checbox-frame mil-dark-input mil-up mil-mb-30">
-                                    <input defaultChecked class="mil-checkbox" id="checkbox-1" type="checkbox" name="agree" required />
+                                    <input class="mil-checkbox" id="checkbox-1" type="checkbox" name="agree" required />
                                     <label for="checkbox-1" class="mil-text-sm">Aceptar los términos y condiciones de datos personales.</label>
                                 </div>
                             </div>
@@ -238,6 +267,7 @@
                         </div>
                         <div class="form-status alert-success mil-mb-90" id="contactFormStatus" style="display: none;"></div>
                     </form>
+                
                     <!-- {/* contact form end */} -->
                 </div>
             </div>
@@ -266,6 +296,41 @@
 
 
 <script src="app.js"></script>
+
+
+<script>
+    (function() {
+        emailjs.init("AmMi5XzGfkmP4UgVr");
+
+        document.getElementById('FormContact').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_w0t9t9s', 'template_hpwrwur', '#FormContact')
+                .then(function() {
+                    console.log('SUCCESS!');
+                    Swal.fire({
+                        title: '¡Éxito!',
+                        text: 'Tu mensaje ha sido enviado correctamente.',
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            document.getElementById('FormContact').reset();
+                        }
+                    });
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    });
+                });
+        });
+    })();
+</script>
+
 
     
 </body>
