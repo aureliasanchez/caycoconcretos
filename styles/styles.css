@@ -47,15 +47,16 @@ scrollbar
     right: 0;
     width: 4px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo claro para ver el track */
 }
 
-.mil-progress-track .mil-progress {
+.mil-progress {
     width: 4px;
     height: 0;
-    color: white;
-    background-color: rgb(211, 47, 47);
+    background-color: rgb(211, 47, 47); /* Rojo visible para el progreso */
+    transition: height 0.1s ease; /* Transición suave para que el progreso se vea fluido */
 }
+
 
 @media screen and (max-width: 992px) {
     .mil-progress-track {

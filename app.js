@@ -59,41 +59,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('videoModal');
-    const videoLinks = document.querySelectorAll('.has-popup-video');
-    const closeBtn = document.querySelector('.mil-close');
-    const iframe = document.getElementById('youtubeIframe');
+// Seleccionamos el elemento de la barra de progreso
+const progressBar = document.querySelector('.mil-progress');
+    
+// Función que actualiza la barra de progreso al hacer scroll
+function updateProgressOnScroll() {
+    // La altura total del documento menos la altura de la ventana visible
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    
+    // Cuánto ha sido desplazado
+    const scrollTop = window.scrollY;
 
-    function openModal() {
-        modal.style.display = 'flex';
-        setTimeout(() => {
-            modal.classList.add('show');
-        }, 10);
-    }
+    // Calculamos el porcentaje del scroll
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
 
-    function closeModal() {
-        modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-            iframe.src = '';
-        }, 300); // Espera a que termine la animación antes de ocultar el modal
-    }
+    // Ajustamos la altura de la barra de progreso según el porcentaje de scroll
+    progressBar.style.height = scrollPercentage + "%";
+}
 
-    videoLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const videoId = this.getAttribute('data-video-id');
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-            openModal();
-        });
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-
-    window.addEventListener('click', function(e) {
-        if (e.target == modal) {
-            closeModal();
-        }
-    });
-});
+// Escuchamos el evento de desplazamiento (scroll) y llamamos a la función
+window.addEventListener('scroll', updateProgressOnScroll);
