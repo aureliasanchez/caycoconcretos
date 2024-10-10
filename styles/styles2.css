@@ -7,6 +7,13 @@
     text-align: center;
 }
 
+.fontpx{
+    font-size: 15px;
+}
+
+.fontpx:hover{
+    color: red;
+}
 /* -------------------------------------------
 
 main
