@@ -2,6 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 
+.pa1{
+    padding: 15px;
+}
+
+
+.same-size {
+    width: 130px; /* Esto ajustará ambas imágenes para que se adapten al ancho de su contenedor */
+    height: 150px; /* Esto mantendrá la proporción correcta */
+    max-width: 130; /* Ajusta el tamaño máximo según lo que prefieras */
+}
+
+
+
 .mil-responsive-image {
     width: 60%;
     height: auto;
@@ -538,10 +551,10 @@ icons
     background-color: rgba(229, 229, 229, 1);
 }
 
-.mil-icon.mil-icon-border {
+/* .mil-icon.mil-icon-border {
     border: 5px solid rgba(229, 229, 229, 1);
     border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(229, 229, 229, 1) 1px, rgba(229, 229, 229, 1) 3px) 5;
-}
+} */
 
 .mil-icon.mil-icon-lg {
     width: 60px;
@@ -639,13 +652,14 @@ services
 ------------------------------------------- */
 .mil-service-card {
     background-color: rgba(255, 255, 255, 1);
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     overflow: hidden;
     padding: 60px;
-    border: 5px solid rgba(0, 0, 0, .1);
+    /* border: 5px solid rgba(0, 0, 0, .1); */
     border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(0, 0, 0, .1) 1px, rgba(0, 0, 0, .1) 3px) 5;
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
     height: 100%;
@@ -653,6 +667,7 @@ services
 
 .mil-service-card-black {
     background-color: black;
+    border-radius: 30px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -660,7 +675,7 @@ services
     position: relative;
     overflow: hidden;
     padding: 60px;
-    border: 5px solid rgba(0, 0, 0, .1);
+    /* border: 5px solid rgba(0, 0, 0, .1); */
     border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(0, 0, 0, .1) 1px, rgba(0, 0, 0, .1) 3px) 5;
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
     height: 100%;
@@ -668,6 +683,7 @@ services
 
 
 .mil-service-card-red {
+    border-radius: 30px;
     background-color: rgb(152, 17, 17);
     color: white;
     display: flex;
@@ -676,7 +692,7 @@ services
     position: relative;
     overflow: hidden;
     padding: 60px;
-    border: 5px solid rgba(0, 0, 0, .1);
+    /* border: 5px solid rgba(0, 0, 0, .1); */
     border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(0, 0, 0, .1) 1px, rgba(0, 0, 0, .1) 3px) 5;
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
     height: 100%;

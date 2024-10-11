@@ -79,3 +79,7 @@ function updateProgressOnScroll() {
 
 // Escuchamos el evento de desplazamiento (scroll) y llamamos a la función
 window.addEventListener('scroll', updateProgressOnScroll);
+
+
+
+

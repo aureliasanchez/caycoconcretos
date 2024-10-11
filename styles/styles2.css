@@ -1,3 +1,61 @@
+.mil-avatar-size {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.swiper-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: none; /* Esconde todos los slides inicialmente */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Asegura que el testimonio ocupe todo el ancho */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.swiper-slide-active {
+    display: flex; /* Muestra solo el slide activo */
+    opacity: 1;
+}
+
+.mil-review-frame {
+    width: 100%; /* Asegura que el testimonio ocupe todo el ancho */
+    text-align: left;
+}
+
+
+
+/* Agregar efecto de transición suave */
+.swiper-slide {
+    transition: transform 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.border-radius{
+    border-radius: 20px;
+}
+
+
 .noned{
     list-style: none;
     list-style-type: none;
