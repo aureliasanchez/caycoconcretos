@@ -729,6 +729,103 @@ services
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
 
+
+
+
+
+/* ---------------------------------------------------------------------------- */
+
+.mil-service-card-black .mil-card-number {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: rgba(0, 0, 0, .1);
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.mil-service-card-black .mil-center {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mil-service-card-black .mil-service-text {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+.mil-service-card-black .mil-go-buton {
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 30px);
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+
+/* ------------------------------------------------------------------------------- */
+
+.mil-service-card-red .mil-card-number {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: rgba(0, 0, 0, .1);
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.mil-service-card-red .mil-center {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mil-service-card-red .mil-service-text {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+.mil-service-card-red .mil-go-buton {
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 30px);
+    transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* hover 1 */
 
 .mil-service-card-black .mil-go-buton {
