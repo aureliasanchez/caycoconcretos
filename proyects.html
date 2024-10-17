@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cayco</title>
+    <link rel="icon" href="https://cayco.netlify.app/img/logo/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- <link rel="stylesheet" href="styles/scss/style.scss">
+    <link rel="stylesheet" href="styles/css/plugins/bootstrap-grid.css">
+    <link rel="stylesheet" href="styles/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="styles/css/plugins/magnific-popup.css"> -->
+    <link rel="stylesheet" href="styles/styles2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+    <div class="mil-progress-track">
+        <div class="mil-progress"></div>
+    </div>
+
+    <!-- header section  -->
+    <div class="mil-top-panel">
+        <div class="container-fluid">
+            <div class="mil-top-panel-content">
+                <a href="index.html" class="mil-logo">
+                    <img src="img/logo/logoRojo.png" loading="lazy" alt="Logo" style="width: 130px;">
+                </a>
+    
+                <div class="mil-navigation mil-light">
+                    <nav>
+                        <ul>
+                            <li class="mil-light">
+                                <a href="index.html">Inicio</a>
+                            </li>
+                            <li class="mil-light">
+                                <a href="services.html">Servicios</a>
+                            </li>
+                            <li class="mil-has-children">
+                                <a href="proyects.html">Proyectos</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contacto</a>
+                            </li>
+                            <li class="mil-light">
+                                <a href="about.html">Acerca de</a>
+                            </li>
+                            <li class="mil-light">
+                                <a href="galeria.html">Galeria</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+    
+                <!-- right buttons -->
+                <div class="mil-top-panel-buttons">
+                    <a href="contact.html#contactForm" class="mil-button mil-sm limp text-center">Gestionar Proyecto</a>
+    
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+                <!-- right buttons end -->
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- banner -->
+    <section class="mil-banner mil-banner-sm">
+        <img src="img/photo/expertos.jpg" loading="lazy" class="mil-bg-img mil-scale" data-value-1=".4" data-value-2="1.4" alt="image" style="object-position: top;" />
+
+        <div class="mil-overlay"></div>
+
+        <div class="container">
+            <div class="mil-background-grid mil-top-space"></div>
+
+            <div class="mil-banner-content mil-center">
+                <div class="mil-mb-90">
+                    <h1 class="mil-light mil-upper mil-mb-30">Proyectos</h1>
+                    <ul class="mil-breadcrumbs mil-center ">
+                        <li><a href="index.html" class="limpio">Home</a></li>
+                        <li><a href="proyects.html" class="limpio">Proyectos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner end -->
+
+
+    <!-- Projects Section -->
+    <section>
+        <div class="container mil-p-120-60">
+            <div class="mil-background-grid mil-softened"></div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="mil-portfolio-item-2 mil-long-item mil-mb-30" data-bs-toggle="modal" data-bs-target="#modalProyecto1">
+                        <img src="img/galery/1.jpg" alt="item_title_1" class="img-fluid" loading="lazy"/>
+                        <div class="mil-category">Proyecto 1</div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6">
+                    <div class="mil-portfolio-item-2 mil-long-item mil-mb-30" data-bs-toggle="modal" data-bs-target="#modalProyecto2">
+                        <img src="img/galery/2.jpg" alt="item_title_2" class="img-fluid" loading="lazy"/>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="mil-portfolio-item-2 mil-long-item mil-mb-30" data-bs-toggle="modal" data-bs-target="#modalProyecto3">
+                        <img src="img/galery/3.jpg" alt="item_title_3" class="img-fluid" loading="lazy"/>
+                    </div>
+                </div> -->
+            </div>            
+        </div>
+
+
+        <!-- Modal para Proyecto 1 -->
+        <div class="modal fade" id="modalProyecto1" tabindex="-1" aria-labelledby="modalProyecto1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="modalProyecto1Label">Proyecto 1</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p>Descripción del Proyecto 1.</p>
+            <p>Fecha: 01/01/2024</p>
+            <p>Empresa: Nombre de la Empresa</p>
+            <div class="row">
+                <!-- Carousel de imágenes -->
+                <div id="carouselProyecto1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="img/galery/1.jpg" class="d-block w-100" alt="Imagen del Proyecto 1">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="img/galery/2.jpg" class="d-block w-100" alt="Imagen adicional del Proyecto 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/galery/3.jpg" class="d-block w-100" alt="Imagen adicional del Proyecto 1">
+                    </div>
+                    </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyecto1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselProyecto1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+        </div>
+  
+
+
+
+
+    </section>
+    <!-- Projects Section End -->
+
+
+
+
+
+
+   <!-- footer section  -->
+   <footer class="mil-relative">
+    <img src="img/photo/footer1.0.png" loading="lazy" class="mil-bg-img mil-parallax" alt="image" style="object-position: top;" data-value-1="-25%" data-value-2="23%">
+
+    <div class="mil-overlay"></div>
+    
+    <div class="container-fluid">
+        <div class="mil-footer-bottom">
+            <p class="mil-light-soft mil-mb-15">© 2024 Cayco. All rights reserved.</p>
+            <ul class="mil-light-soft mil-mb-15">
+                <!-- Social links would go here -->
+            </ul>
+            <!-- <ul class="mil-light-soft mil-mb-15">
+                <li><a href="">Our App</a></li>
+                <li><a href="">Sitemap</a></li>
+            </ul> -->
+        </div>
+    </div>
+    </footer>
+
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>
