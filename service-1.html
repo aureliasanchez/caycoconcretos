@@ -46,6 +46,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+        <!-- Registro de eventos -->
+        <script>
+            // Inicialización de Mixpanel (o cualquier analítica que uses)
+            (function(f,b){
+                if(!b.__SV){
+                    var a,e,i,g;
+                    window.mixpanel=b;
+                    b._i=[];
+                    b.init=function(a,e,d){
+                        function f(b,h){
+                            var a=h.split(".");
+                            2==a.length&&(b=b[a[0]],h=a[1]);
+                            b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}
+                        }
+                        var c=b;
+                        "undefined"!==typeof d?c=b[d]=[]:d="mixpanel";
+                        c.people=c.people||[];
+                        c.toString=function(b){
+                            var a="mixpanel";
+                            "mixpanel"!==d&&(a+="."+d);
+                            b||(a+=" (stub)");
+                            return a
+                        };
+                        c.people.toString=function(){return c.toString(1)+".people (stub)"};
+                        i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                        for(g=0;g<i.length;g++)f(c,i[g]);
+                        b._i.push([a,e,d])
+                    };
+                    b.__SV=1.2;
+                    a=f.createElement("script");
+                    a.type="text/javascript";
+                    a.async=!0;
+                    a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+                        MIXPANEL_CUSTOM_LIB_URL:
+                        "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+                    e=f.getElementsByTagName("script")[0];
+                    e.parentNode.insertBefore(a,e)
+                }
+            })(document,window.mixpanel||[]);
+            mixpanel.init("f3f9766291078d87511d3244f603163f");
+    
+            // Registro de eventos de Page View
+            mixpanel.track("Page_View", {
+                page_name: "Tipos de Concretos",
+                url: window.location.href,
+                referrer: document.referrer,
+                device: navigator.userAgent
+            });
+    
+            // Evento para clic en CTA
+            function trackCTA(buttonName) {
+                mixpanel.track("CTA_Click", {
+                    button_name: buttonName,
+                    page_name: "Tipos de Concretos",
+                    cta_type: "Primario",
+                    action: "Gestionar Proyecto"
+                });
+            }
+        </script>
 
 
     <div class="mil-progress-track">
@@ -399,6 +458,7 @@
 
 
 
+    <!-- WhatsApp -->
     <a href="https://wa.me/527751340586?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
