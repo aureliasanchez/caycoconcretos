@@ -390,74 +390,111 @@
 
                 <div class="col-lg-7">
                     <!-- {/* contact form */} -->
-                    <form id="FormContact" class="mil-mb-90 cform">
+                    <form id="FormContact" class="mil-mb-90 cform" action="https://script.google.com/macros/s/AKfycbxA2_fXwzFwsKVFdDRzstyYeOvGyzIUaxhylGM6DDnGVXZiq76sFZu3fPaR5G2hPWvvIQ/exec" method="POST">
                         <div class="row">
+                            <!-- Nombre Completo -->
                             <div class="col-lg-6">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                     <label class="mil-upper"><span>Nombre Completo</span><span class="mil-required">*</span></label>
                                     <input 
                                         type="text" 
-                                        placeholder="Pon tu nombre aqui"
-                                        name="name" 
+                                        placeholder="Pon tu nombre aquí"
+                                        name="Nombre_del_Cliente" 
                                         required 
                                     />
                                 </div>
                             </div>
+                            <!-- Empresa -->
                             <div class="col-lg-6">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
-                                    <label class="mil-upper"><span>Correo Electronico</span><span class="mil-required">*</span></label>
-                                    <input 
-                                        type="email" 
-                                        placeholder="Pon tu correo aqui"
-                                        name="email" 
-                                        required 
-                                    />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
-                                    <label class="mil-upper"><span>Celular</span><span class="mil-required">*</span></label>
-                                    <input 
-                                        type="tel" 
-                                        placeholder="Pon tu celular aqui"
-                                        name="tel" 
-                                        required 
-                                    />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
-                                    <label class="mil-upper"><span>Presupuesto</span><span class="mil-required">*</span></label>
+                                    <label class="mil-upper"><span>Empresa</span></label>
                                     <input 
                                         type="text" 
-                                        placeholder="Pon tu presupuesto aqui"
-                                        name="budget" 
+                                        placeholder="Pon el nombre de tu empresa"
+                                        name="Empresa"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Nombre de la Obra -->
+                            <div class="col-lg-6">
+                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
+                                    <label class="mil-upper"><span>Nombre de la Obra</span><span class="mil-required">*</span></label>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Pon el nombre de la obra"
+                                        name="Nombre_de_la_Obra" 
                                         required 
                                     />
                                 </div>
                             </div>
+                            <!-- Tipo de Obra -->
+                            <div class="col-lg-6">
+                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
+                                    <label class="mil-upper"><span>Tipo de Obra</span><span class="mil-required">*</span></label>
+                                    <select name="Tipo_de_Obra" required class="form-select">
+                                        <option value="">Selecciona el tipo de obra</option>
+                                        <option value="residencial">Residencial</option>
+                                        <option value="comercial">Comercial</option>
+                                        <option value="industrial">Industrial</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Ubicación de la Obra -->
+                            <div class="col-lg-6">
+                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
+                                    <label class="mil-upper"><span>Ubicación de la Obra</span><span class="mil-required">*</span></label>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Pon la ubicación de la obra"
+                                        name="Ubicación_de_la_Obra" 
+                                        required 
+                                    />
+                                </div>
+                            </div>
+                            <!-- Tipo de Concreto -->
+                            <div class="col-lg-6">
+                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
+                                    <label class="mil-upper"><span>Tipo de Concreto</span><span class="mil-required">*</span></label>
+                                    <select name="Tipo_de_Concreto" required class="form-select">
+                                        <option value="">Selecciona el tipo de concreto</option>
+                                        <option value="convencional">Convencional</option>
+                                        <option value="estructural">Estructural</option>
+                                        <option value="decorativo">Decorativo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Volumen Requerido -->
+                            <div class="col-lg-6">
+                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
+                                    <label class="mil-upper"><span>Volumen Requerido (m³)</span><span class="mil-required">*</span></label>
+                                    <input 
+                                        type="number" 
+                                        placeholder="Pon el volumen en m³"
+                                        name="Volumen" 
+                                        required 
+                                    />
+                                </div>
+                            </div>
+                            <!-- Mensaje -->
                             <div class="col-lg-12">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                     <label class="mil-upper"><span>Mensaje</span><span class="mil-required">*</span></label>
                                     <textarea 
-                                        placeholder="Pon tu mensaje aqui"
-                                        name="message" 
+                                        placeholder="Agrega algún detalle adicional"
+                                        name="Mensaje" 
                                         required 
                                     ></textarea>
                                 </div>
                             </div>
+                            <!-- Botón de Enviar -->
                             <div class="col-lg-12">
-                                <div class="mil-checbox-frame mil-dark-input mil-up mil-mb-30">
-                                    <input class="mil-checkbox" id="checkbox-1" type="checkbox" name="agree" required />
-                                    <label for="checkbox-1" class="mil-text-sm">Aceptar los términos y condiciones de datos personales.</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <button type="submit" class="mil-button mil-up">Enviar</button>
+                                <button type="submit" class="mil-button mil-up">Enviar Cotización</button>
                             </div>
                         </div>
                         <div class="form-status alert-success mil-mb-90" id="contactFormStatus" style="display: none;"></div>
                     </form>
+                    
+
                 
                     <!-- {/* contact form end */} -->
                 </div>
