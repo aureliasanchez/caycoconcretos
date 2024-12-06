@@ -390,41 +390,27 @@
 
                 <div class="col-lg-7">
                     <!-- {/* contact form */} -->
-                    <form id="FormContact" class="mil-mb-90 cform" action="https://script.google.com/macros/s/AKfycbz6_WYGvEAk6tr9FBgFJmiRuSV9boCu46vPDN5bp9kJuKofqew9KBhmMNpRX9p2ahjGfg/exec" method="POST">
+                    <form id="FormContact" class="mil-mb-90 cform" action="https://script.google.com/macros/s/AKfycbxz0OCuWP7gyH1Oa2Q8rJylAA-RUGBfJGZ1fTjPi-SrHbEaMgfNyxUofJjarx98l5cPRQ/exec" method="POST">
                         <div class="row">
                             <!-- Nombre Completo -->
                             <div class="col-lg-6">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                     <label class="mil-upper"><span>Nombre Completo</span><span class="mil-required">*</span></label>
-                                    <input 
-                                        type="text" 
-                                        placeholder="Pon tu nombre aquí"
-                                        name="Nombre_del_Cliente" 
-                                        required 
-                                    />
+                                    <input type="text" placeholder="Pon tu nombre aquí" name="Nombre_del_Cliente" required />
                                 </div>
                             </div>
                             <!-- Empresa -->
                             <div class="col-lg-6">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                     <label class="mil-upper"><span>Empresa</span></label>
-                                    <input 
-                                        type="text" 
-                                        placeholder="Pon el nombre de tu empresa"
-                                        name="Empresa"
-                                    />
+                                    <input type="text" placeholder="Pon el nombre de tu empresa" name="Empresa" />
                                 </div>
                             </div>
                             <!-- Nombre de la Obra -->
                             <div class="col-lg-6">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                     <label class="mil-upper"><span>Nombre de la Obra</span><span class="mil-required">*</span></label>
-                                    <input 
-                                        type="text" 
-                                        placeholder="Pon el nombre de la obra"
-                                        name="Nombre_de_la_Obra" 
-                                        required 
-                                    />
+                                    <input type="text" placeholder="Pon el nombre de la obra" name="Nombre_de_la_Obra" required />
                                 </div>
                             </div>
                             <!-- Tipo de Obra -->
@@ -443,12 +429,7 @@
                             <div class="col-lg-6">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                     <label class="mil-upper"><span>Ubicación de la Obra</span><span class="mil-required">*</span></label>
-                                    <input 
-                                        type="text" 
-                                        placeholder="Pon la ubicación de la obra"
-                                        name="Ubicación_de_la_Obra" 
-                                        required 
-                                    />
+                                    <input type="text" placeholder="Pon la ubicación de la obra" name="Ubicación_de_la_Obra" required />
                                 </div>
                             </div>
                             <!-- Tipo de Concreto -->
@@ -467,23 +448,7 @@
                             <div class="col-lg-6">
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                     <label class="mil-upper"><span>Volumen Requerido (m³)</span><span class="mil-required">*</span></label>
-                                    <input 
-                                        type="number" 
-                                        placeholder="Pon el volumen en m³"
-                                        name="Volumen" 
-                                        required 
-                                    />
-                                </div>
-                            </div>
-                            <!-- Mensaje -->
-                            <div class="col-lg-12">
-                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
-                                    <label class="mil-upper"><span>Mensaje</span><span class="mil-required">*</span></label>
-                                    <textarea 
-                                        placeholder="Agrega algún detalle adicional"
-                                        name="Mensaje" 
-                                        required 
-                                    ></textarea>
+                                    <input type="number" placeholder="Pon el volumen en m³" name="Volumen" required />
                                 </div>
                             </div>
                             <!-- Botón de Enviar -->
@@ -491,8 +456,8 @@
                                 <button type="submit" class="mil-button mil-up">Enviar Cotización</button>
                             </div>
                         </div>
-                        <div class="form-status alert-success mil-mb-90" id="contactFormStatus" style="display: none;"></div>
                     </form>
+                    
                     
 
                 
@@ -526,42 +491,23 @@
 <script src="app.js"></script>
 
 
-<script>
-    (function() {
-        emailjs.init("AmMi5XzGfkmP4UgVr");
-
-        document.getElementById('FormContact').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            emailjs.sendForm('service_w0t9t9s', 'template_hpwrwur', '#FormContact')
-                .then(function() {
-                    console.log('SUCCESS!');
-                    Swal.fire({
-                        title: '¡Éxito!',
-                        text: 'Tu mensaje ha sido enviado correctamente.',
-                        icon: 'success',
-                        confirmButtonText: 'Aceptar'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            document.getElementById('FormContact').reset();
-                        }
-                    });
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    Swal.fire({
-                        title: 'Error',
-                        text: 'Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.',
-                        icon: 'error',
-                        confirmButtonText: 'Aceptar'
-                    });
-                });
-        });
-    })();
-</script>
-
 <a href="https://wa.me/527751340586?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
-    
+<script>
+    document.getElementById("FormContact").onsubmit = function (e) {
+        e.preventDefault(); // Detener el comportamiento predeterminado
+        Swal.fire({
+            title: "¡Éxito!",
+            text: "Tu solicitud ha sido enviada correctamente.",
+            icon: "success",
+            confirmButtonText: "Aceptar"
+        }).then(() => {
+            document.getElementById("FormContact").submit(); // Enviar el formulario
+        });
+    };
+</script>
+
+   
 </body>
 </html>
