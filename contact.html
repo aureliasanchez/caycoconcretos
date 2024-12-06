@@ -494,19 +494,46 @@
 <a href="https://wa.me/527751340586?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
+
 <script>
-    document.getElementById("FormContact").onsubmit = function (e) {
-        e.preventDefault(); // Detener el comportamiento predeterminado
-        Swal.fire({
-            title: "¡Éxito!",
-            text: "Tu solicitud ha sido enviada correctamente.",
-            icon: "success",
-            confirmButtonText: "Aceptar"
-        }).then(() => {
-            document.getElementById("FormContact").submit(); // Enviar el formulario
+    document.getElementById("FormContact").addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita el envío normal del formulario
+
+        // Obtén los datos del formulario
+        const form = event.target;
+        const formData = new FormData(form);
+
+        // Envía los datos al Web App usando fetch
+        fetch(form.action, {
+            method: "POST",
+            body: formData,
+        })
+        .then((response) => response.text())
+        .then((text) => {
+            // Mostrar el mensaje de confirmación
+            Swal.fire({
+                title: "¡Éxito!",
+                text: "Tu solicitud ha sido enviada correctamente.",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+            });
+
+            // Limpia el formulario después de enviar
+            form.reset();
+        })
+        .catch((error) => {
+            // Maneja cualquier error
+            Swal.fire({
+                title: "Error",
+                text: "Hubo un problema al enviar tu solicitud. Por favor, intenta nuevamente.",
+                icon: "error",
+                confirmButtonText: "Aceptar",
+            });
+            console.error("Error al enviar el formulario:", error);
         });
-    };
+    });
 </script>
+
 
    
 </body>
