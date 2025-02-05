@@ -11,6 +11,57 @@
     height: auto;
     overflow: hidden;
 }
+.benefits-row {
+    gap: 40px; /* Espaciado entre columnas */
+}
+
+.benefits-row .mil-advantage {
+    margin-bottom: 30px; /* Aumenta el margen entre cada caja */
+}
+
+.benefits-row h5 {
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+.benefits-row .mil-icon {
+    margin-bottom: 15px; /* Espacio debajo del icono */
+}
+
+/* Espaciado entre esta sección y la siguiente */
+.cpro-section {
+    padding-bottom: 50px; /* Ajusta según necesidad */
+}
+
+/* Asegura que los elementos dentro de esta sección estén alineados */
+.cpro-row {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el texto y el video */
+}
+
+/* Asegura que el video no se superponga con el texto */
+.cpro-video {
+    display: flex;
+    justify-content: center;
+}
+
+.cpro-video iframe {
+    max-width: 100%;
+}
+
+/* Alineación del texto y logo */
+.cpro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cpro-logo {
+    text-align: center;
+    max-width: 200px; /* Ajusta el tamaño del logo según sea necesario */
+    margin-top: 10px; /* Espaciado entre el texto y la imagen */
+}
+
 
 .swiper-slide {
     display: none; /* Esconde todos los slides inicialmente */
