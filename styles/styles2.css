@@ -91,17 +91,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 .border-radius{
     border-radius: 20px;
 }
@@ -599,6 +588,105 @@ suptitle
 link
 
 ------------------------------------------- */
+.mision-vision-section {
+    background: #fff;
+    padding: 50px 0;
+    position: relative;
+}
+
+.mision-vision-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 400px; /* Limita el ancho para que no se vean tan grandes */
+}
+
+.mision-vision-card:hover {
+    transform: translateY(-5px);
+}
+
+.mision-vision-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    background-color: #E83434;
+    margin: 0 auto 10px;
+}
+
+.mision-vision-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.mision-vision-text {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+/*--------------------*/
+.mil-section {
+    background: #fff;
+    padding: 50px 0;
+}
+
+.card-value {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    height: 100%; /* Mantiene todas las tarjetas del mismo tamaño */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-value:hover {
+    transform: translateY(-5px);
+}
+
+.icon-container {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #E83434;
+}
+
+.mil-section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.mil-section-text {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/*--------------------*/
 .mil-link {
     cursor: pointer;
     display: inline-flex;
@@ -663,14 +751,19 @@ button
     border: none;
     background-color: rgb(211, 47, 47);
     color: white;
-    padding: 0 60px;
-    height: 70px;
+    padding: 0 5px; /* Reduce el espacio horizontal interno */
+    height: 50px; /* Reduce la altura para un diseño más compacto */
     text-transform: uppercase;
     font-weight: 600;
     transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
     font-size: 15px;
-    border-radius: 20px;
+    border-radius: 20px; /* Mantiene bordes redondeados */
 }
+
+.mil-button:hover {
+    background-color: rgb(183, 28, 28); /* Oscurece el rojo al pasar el mouse */
+}
+
 
 .mil-button.mil-transparent-button {
     background-color: transparent;
