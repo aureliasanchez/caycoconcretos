@@ -708,7 +708,7 @@ icons
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-    padding: 60px;
+    padding: 20px;
     border: 5px solid rgba(0, 0, 0, .1);
     border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgb(211, 47, 47) 1px, rgb(211, 47, 47) 3px) 5;
     transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
@@ -1582,7 +1582,6 @@ top panel
 
 ------------------------------------------- */
 .mil-top-panel {
-    border-bottom: solid 1px rgba(255, 255, 255, .1);
     position: fixed;
     z-index: 999;
     top: 0;
@@ -2083,7 +2082,21 @@ process
 
 
 
+/*---------------------------
 
+
+----------------------------------*/
+.mil-icon-circle {
+    width: 60px; /* Ajusta según el tamaño deseado */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Hace el fondo circular */
+    background-color: #f00; /* Cambia al color que desees */
+    color: white; /* Color del ícono */
+    font-size: 24px;
+}
 
 
 
