@@ -30,19 +30,22 @@
 
 
 
-.r-color{
+.r-color {
     color: rgb(211, 47, 47);
 }
 
-.pa1{
+.pa1 {
     padding: 15px;
 }
 
 
 .same-size {
-    width: 130px; /* Esto ajustará ambas imágenes para que se adapten al ancho de su contenedor */
-    height: 150px; /* Esto mantendrá la proporción correcta */
-    max-width: 130; /* Ajusta el tamaño máximo según lo que prefieras */
+    width: 130px;
+    /* Esto ajustará ambas imágenes para que se adapten al ancho de su contenedor */
+    height: 150px;
+    /* Esto mantendrá la proporción correcta */
+    max-width: 130;
+    /* Ajusta el tamaño máximo según lo que prefieras */
 }
 
 
@@ -50,36 +53,39 @@
 .mil-responsive-image {
     width: 60%;
     height: auto;
-    display: block; /* Elimina el espacio extra debajo de la imagen */
+    display: block;
+    /* Elimina el espacio extra debajo de la imagen */
     align-self: center;
 }
 
 /* Media query para dispositivos más pequeños */
 @media screen and (max-width: 600px) {
     .mil-image-container {
-        max-width: 100%; /* Permite que la imagen ocupe todo el ancho en pantallas pequeñas */
+        max-width: 100%;
+        /* Permite que la imagen ocupe todo el ancho en pantallas pequeñas */
     }
 }
-  
 
-.bg-black{
+
+.bg-black {
     background-color: black;
 }
 
 
-.w-color{
+.w-color {
     color: white;
 }
 
-.limp{
+.limp {
     text-decoration: none;
     color: black;
 }
 
-.limpio{
+.limpio {
     text-decoration: none;
     color: white;
 }
+
 /* -------------------------------------------
 
 scrollbar
@@ -92,14 +98,17 @@ scrollbar
     right: 0;
     width: 4px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Fondo claro para ver el track */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Fondo claro para ver el track */
 }
 
 .mil-progress {
     width: 4px;
     height: 0;
-    background-color: rgb(211, 47, 47); /* Rojo visible para el progreso */
-    transition: height 0.1s ease; /* Transición suave para que el progreso se vea fluido */
+    background-color: rgb(211, 47, 47);
+    /* Rojo visible para el progreso */
+    transition: height 0.1s ease;
+    /* Transición suave para que el progreso se vea fluido */
 }
 
 
@@ -1021,6 +1030,7 @@ portfolio
 }
 
 @media screen and (max-width: 992px) {
+
     .mil-portfolio-grid .grid-sizer,
     .mil-portfolio-grid .mil-grid-item {
         width: 100%;
@@ -1101,7 +1111,7 @@ portfolio
     padding-bottom: 65%;
 }
 
-.mil-portfolio-item-2 > img {
+.mil-portfolio-item-2>img {
     position: absolute;
     top: 0;
     left: 0;
@@ -1134,7 +1144,8 @@ portfolio
 .mil-portfolio-item-2 .mil-category {
     position: absolute;
     top: calc(100% - 90px);
-    left: 0; /* Alinea el elemento al borde izquierdo */
+    left: 0;
+    /* Alinea el elemento al borde izquierdo */
     width: 160px;
     text-align: center;
     background-color: rgb(211, 47, 47);
@@ -1498,7 +1509,7 @@ footer .mil-bg-img {
     color: rgb(211, 47, 47);
 }
 
-.mil-footer-navigation nav ul li.mil-active > a {
+.mil-footer-navigation nav ul li.mil-active>a {
     padding: 5px 10px;
     color: rgba(0, 0, 0, 1);
     background-color: rgb(211, 47, 47);
@@ -1592,7 +1603,8 @@ top panel
 }
 
 .mil-top-panel.sticky {
-    background-color: #1F282D; /* Nuevo color al hacer scroll */
+    background-color: #1F282D;
+    /* Nuevo color al hacer scroll */
 }
 
 .mil-top-panel .mil-top-panel-content {
@@ -1608,7 +1620,8 @@ top panel
     /* margin-right: 90px; Añade un margen derecho para mover el logo */
     /* margin-left: auto;  Asegura que el logo se alinee a la derecha */
     display: flex;
-    justify-content: space-between; /* Mueve el logo más a la derecha */
+    justify-content: space-between;
+    /* Mueve el logo más a la derecha */
     align-items: center;
 }
 
@@ -1675,7 +1688,7 @@ top panel
     color: rgb(211, 47, 47);
 }
 
-.mil-navigation nav ul li.mil-active > a {
+.mil-navigation nav ul li.mil-active>a {
     padding: 0 10px;
     color: rgba(255, 255, 255, 1);
     background-color: rgb(211, 47, 47);
@@ -1799,7 +1812,7 @@ top panel
         display: none;
     }
 
-    .mil-navigation nav ul li.mil-has-children > a:before {
+    .mil-navigation nav ul li.mil-has-children>a:before {
         content: '';
         position: absolute;
         top: 0;
@@ -1856,6 +1869,7 @@ top panel
         display: none;
     }
 }
+
 /* -----------------------------------------
 Whatsapp
 */
@@ -2087,14 +2101,18 @@ process
 
 ----------------------------------*/
 .mil-icon-circle {
-    width: 60px; /* Ajusta según el tamaño deseado */
+    width: 60px;
+    /* Ajusta según el tamaño deseado */
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* Hace el fondo circular */
-    background-color: #f00; /* Cambia al color que desees */
-    color: white; /* Color del ícono */
+    border-radius: 50%;
+    /* Hace el fondo circular */
+    background-color: #f00;
+    /* Cambia al color que desees */
+    color: white;
+    /* Color del ícono */
     font-size: 24px;
 }
 
@@ -2200,13 +2218,13 @@ inputs
     opacity: 0;
 }
 
-.mil-checbox-frame .mil-checkbox + label {
+.mil-checbox-frame .mil-checkbox+label {
     position: relative;
     cursor: pointer;
     padding: 0;
 }
 
-.mil-checbox-frame .mil-checkbox + label:before {
+.mil-checbox-frame .mil-checkbox+label:before {
     content: '';
     margin-top: -2px;
     margin-right: 15px;
@@ -2220,27 +2238,27 @@ inputs
     transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
 }
 
-.mil-checbox-frame .mil-checkbox:hover + label:before {
+.mil-checbox-frame .mil-checkbox:hover+label:before {
     background: rgba(255, 255, 255, .1);
     border: solid 1px rgb(211, 47, 47);
 }
 
-.mil-checbox-frame .mil-checkbox:checked + label:before {
+.mil-checbox-frame .mil-checkbox:checked+label:before {
     background: rgb(211, 47, 47);
     border: solid 1px rgb(211, 47, 47);
 }
 
-.mil-checbox-frame .mil-checkbox:disabled + label {
+.mil-checbox-frame .mil-checkbox:disabled+label {
     color: #b8b8b8;
     cursor: auto;
 }
 
-.mil-checbox-frame .mil-checkbox:disabled + label:before {
+.mil-checbox-frame .mil-checkbox:disabled+label:before {
     box-shadow: none;
     background: #ddd;
 }
 
-.mil-checbox-frame .mil-checkbox:checked + label:after {
+.mil-checbox-frame .mil-checkbox:checked+label:after {
     content: '';
     position: absolute;
     left: 5px;
@@ -2252,11 +2270,11 @@ inputs
     transform: rotate(45deg);
 }
 
-.mil-checbox-frame.mil-dark-input .mil-checkbox + label:before {
+.mil-checbox-frame.mil-dark-input .mil-checkbox+label:before {
     border-color: rgba(0, 0, 0, 1);
 }
 
-.mil-checbox-frame.mil-dark-input .mil-checkbox:checked + label:before {
+.mil-checbox-frame.mil-dark-input .mil-checkbox:checked+label:before {
     background: rgb(211, 47, 47);
     border: solid 1px rgb(211, 47, 47);
 }
@@ -2395,7 +2413,7 @@ skills
     .mil-pagination {
         justify-content: center;
     }
-    
+
     .mil-pagination .mil-nav-buttons {
         display: none;
     }
@@ -3056,6 +3074,7 @@ img.mfp-img {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .mfp-img-container .mfp-close {
     top: -110px;
     right: -24px;
@@ -3064,4 +3083,15 @@ img.mfp-img {
 /* swiper container hidden */
 .mil-wrapper .swiper-container {
     overflow: visible;
+}
+
+/* Mis estilos 
+--------------------------------------------------------------------------------
+*/
+
+.textCenter {
+    text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
 }
