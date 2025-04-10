@@ -80,6 +80,99 @@ function updateProgressOnScroll() {
 // Escuchamos el evento de desplazamiento (scroll) y llamamos a la función
 window.addEventListener('scroll', updateProgressOnScroll);
 
+/*Mis JS
+---------------------------------------
+---------------------------------------
+---------------------------------------
+*/
 
+document.addEventListener('DOMContentLoaded', function() {
+    const opcionIzquierda = document.getElementById('opcion-izquierda');
+    const opcionDerecha = document.getElementById('opcion-derecha');
+    const opcionesIzquierda = document.getElementById('opciones-izquierda');
+    const opcionesDerecha = document.getElementById('opciones-derecha');
+    
+    // Debug para verificar que los elementos se encuentran
+    console.log('Elementos principales:', {
+        opcionIzquierda: opcionIzquierda,
+        opcionDerecha: opcionDerecha,
+        opcionesIzquierda: opcionesIzquierda,
+        opcionesDerecha: opcionesDerecha
+    });
+    
+    // Obtener las opciones secundarias separadas por lado
+    const opcionesSecundariasIzquierda = opcionesIzquierda?.querySelectorAll('.opcion-secundaria') || [];
+    const opcionesSecundariasDerecha = opcionesDerecha?.querySelectorAll('.opcion-secundaria') || [];
+    
+    // Debug para verificar las opciones secundarias
+    console.log('Cantidad de opciones secundarias:', {
+        izquierda: opcionesSecundariasIzquierda.length,
+        derecha: opcionesSecundariasDerecha.length
+    });
 
+    // Verificar que los event listeners se están agregando
+    if (opcionIzquierda) {
+        opcionIzquierda.addEventListener('click', function() {
+            console.log('Click en opción izquierda');
+            opcionesDerecha.style.display = 'none';
+            opcionesIzquierda.style.display = opcionesIzquierda.style.display === 'none' ? 'flex' : 'none';
+            ocultarTodasLasListas();
+        });
+    }
 
+    if (opcionDerecha) {
+        opcionDerecha.addEventListener('click', function() {
+            console.log('Click en opción derecha');
+            opcionesIzquierda.style.display = 'none';
+            opcionesDerecha.style.display = opcionesDerecha.style.display === 'none' ? 'flex' : 'none';
+            ocultarTodasLasListas();
+        });
+    }
+
+    function ocultarTodasLasListas() {
+        document.querySelectorAll('.lista-elementos').forEach(lista => {
+            lista.style.display = 'none';
+        });
+    }
+
+    // Manejar opciones secundarias izquierdas
+    opcionesSecundariasIzquierda.forEach((opcion, index) => {
+        console.log('Agregando evento a opción izquierda:', index + 1);
+        opcion.addEventListener('click', function(e) {
+            console.log('Click en opción secundaria izquierda:', index + 1);
+            e.preventDefault();
+            ocultarTodasLasListas();
+            const listaCorrespondiente = document.getElementById(`lista-opcion-${index + 1}`);
+            console.log('Lista correspondiente:', listaCorrespondiente);
+            if (listaCorrespondiente) {
+                listaCorrespondiente.style.display = 'block';
+            }
+        });
+    });
+
+    // Manejar opciones secundarias derechas
+    opcionesSecundariasDerecha.forEach((opcion, index) => {
+        console.log('Agregando evento a opción derecha:', index + 4);
+        opcion.addEventListener('click', function(e) {
+            console.log('Click en opción secundaria derecha:', index + 4);
+            e.preventDefault();
+            ocultarTodasLasListas();
+            const listaCorrespondiente = document.getElementById(`lista-opcion-${index + 4}`);
+            console.log('Lista correspondiente:', listaCorrespondiente);
+            if (listaCorrespondiente) {
+                listaCorrespondiente.style.display = 'block';
+            }
+        });
+    });
+
+    // Manejar clics en los elementos de la lista
+    document.querySelectorAll('.elemento-lista').forEach(elemento => {
+        elemento.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                window.location.href = href;
+            }
+        });
+    });
+});
