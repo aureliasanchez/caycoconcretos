@@ -202,25 +202,28 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!track) return;
 
     const slides = Array.from(track.children);
-    let isMouseOver = false;
+    let isPaused = false;
+    let isTouching = false;
     let animationId = null;
     let lastTime = 0;
-    const VELOCITY = 1; // Velocidad del carrusel (píxeles por frame)
+    const VELOCITY = 1;
+    let resumeTimeout;
 
-    // Calculamos el ancho de cada slide
+    // Detectar si es dispositivo móvil
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
     function getSlideWidth() {
         const slide = slides[0];
         const style = window.getComputedStyle(slide);
-        return slide.offsetWidth + parseInt(style.marginRight || 0) + parseInt(style.marginLeft || 0) + 30; // 30 es el gap
+        return slide.offsetWidth + parseInt(style.marginRight || 0) + parseInt(style.marginLeft || 0) + 30;
     }
 
     function moveSlide(timestamp) {
         if (!lastTime) lastTime = timestamp;
-        const deltaTime = timestamp - lastTime;
         lastTime = timestamp;
 
-        // Pausar al hacer hover
-        if (isMouseOver) {
+        // Detener si está en hover (desktop) o tocando (móvil)
+        if ((isMobile && isTouching) || (!isMobile && isPaused)) {
             animationId = requestAnimationFrame(moveSlide);
             return;
         }
@@ -231,31 +234,49 @@ document.addEventListener('DOMContentLoaded', function() {
             currentX = parseFloat(currentTransform.split(',')[4]) || 0;
         }
 
-        // Mover el carrusel
         currentX -= VELOCITY;
         track.style.transform = `translateX(${currentX}px)`;
 
-        // Si el primer slide ha salido completamente
         const slideWidth = getSlideWidth();
         if (currentX <= -slideWidth) {
-            // Mover el primer slide al final
             const firstSlide = track.firstElementChild;
             track.appendChild(firstSlide);
-            // Ajustar la posición
             track.style.transform = `translateX(${currentX + slideWidth}px)`;
         }
 
         animationId = requestAnimationFrame(moveSlide);
     }
 
-    // Event listeners para pausar/reanudar en hover
-    track.addEventListener('mouseenter', () => {
-        isMouseOver = true;
-    });
+    // Función para programar la reanudación después de 1 segundo
+    function startResumeTimeout() {
+        if (resumeTimeout) clearTimeout(resumeTimeout);
+        resumeTimeout = setTimeout(() => {
+            isPaused = false;
+            isTouching = false;
+        }, 1000);
+    }
 
-    track.addEventListener('mouseleave', () => {
-        isMouseOver = false;
-    });
+    if (isMobile) {
+        // Comportamiento móvil - touch
+        track.addEventListener('touchstart', () => {
+            isTouching = true;
+            if (resumeTimeout) clearTimeout(resumeTimeout);
+        }, { passive: true });
+
+        track.addEventListener('touchend', () => {
+            startResumeTimeout();
+        }, { passive: true });
+    } else {
+        // Comportamiento desktop - hover
+        track.addEventListener('mouseenter', () => {
+            isPaused = true;
+            if (resumeTimeout) clearTimeout(resumeTimeout);
+        });
+
+        track.addEventListener('mouseleave', () => {
+            startResumeTimeout();
+        });
+    }
 
     // Iniciar la animación
     moveSlide(performance.now());
