@@ -3557,3 +3557,56 @@ iframe {
         flex: 0 0 100%; /* Mostrar 1 en móviles */
     }
 }
+
+/* Estilo para la vista de lista */
+.carrusel-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    transform: none !important; /* Desactiva transformaciones */
+}
+
+.carrusel-lista .carrusel-slide {
+    flex: 0 0 auto; /* Ajusta el tamaño de los elementos */
+    max-width: 150px; /* Tamaño fijo para las imágenes */
+    min-width: 100px;
+}
+
+/* Estilo del botón de alternancia */
+#toggleViewButton {
+    display: none; /* Oculto por defecto */
+    padding: 10px 20px;
+    background-color: #d32f2f; /* Color de fondo rojo */
+    color: #fff; /* Color del texto blanco */
+    border: none;
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centrado horizontal */
+}
+
+/* Mostrar el botón solo en pantallas de 1200px o menos */
+@media screen and (max-width: 1200px) {
+    #toggleViewButton {
+        display: block; /* Visible solo en pantallas pequeñas */
+    }
+}
+
+/* Efecto hover */
+#toggleViewButton:hover {
+    background-color: #b71c1c; /* Color más oscuro al pasar el mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Centrar el botón */
+.toggle-view {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente si es necesario */
+    width: 100%;
+}

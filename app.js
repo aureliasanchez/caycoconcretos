@@ -197,9 +197,10 @@ Carrucel de img
 ---------------------------------------
 */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const track = document.getElementById('carruselTrack');
-    if (!track) return;
+    const toggleButton = document.getElementById('toggleViewButton'); // Botón para alternar vistas
+    if (!track || !toggleButton) return;
 
     const slides = Array.from(track.children);
     let isPaused = false;
@@ -208,6 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastTime = 0;
     const VELOCITY = 1;
     let resumeTimeout;
+    let isListView = false; // Estado inicial: carrusel
 
     // Detectar si es dispositivo móvil
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -277,6 +279,24 @@ document.addEventListener('DOMContentLoaded', function() {
             startResumeTimeout();
         });
     }
+
+    // Alternar entre carrusel y vista de lista
+    toggleButton.addEventListener('click', function () {
+        isListView = !isListView; // Alternar estado
+
+        if (isListView) {
+            // Cambiar a vista de lista
+            track.classList.add('carrusel-lista');
+            track.style.transform = 'none'; // Desactiva el movimiento
+            cancelAnimationFrame(animationId); // Detener animación
+            toggleButton.textContent = 'Cambiar a Carrusel';
+        } else {
+            // Cambiar a vista de carrusel
+            track.classList.remove('carrusel-lista');
+            moveSlide(performance.now()); // Reiniciar animación
+            toggleButton.textContent = 'Cambiar a Lista';
+        }
+    });
 
     // Iniciar la animación
     moveSlide(performance.now());
