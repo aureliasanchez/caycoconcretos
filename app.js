@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let isTouching = false;
     let animationId = null;
     let lastTime = 0;
-    const VELOCITY = 1;
+    const VELOCITY = 1.5;
     let resumeTimeout;
     let isListView = false; // Estado inicial: carrusel
 
