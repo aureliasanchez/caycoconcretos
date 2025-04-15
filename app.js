@@ -203,16 +203,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const slides = Array.from(track.children);
     let isMouseOver = false;
-    let animationId;
+    let animationId = null;
+    let lastTime = 0;
+    const VELOCITY = 1; // Velocidad del carrusel (píxeles por frame)
 
-    // Calculamos el ancho de cada slide dinámicamente
+    // Calculamos el ancho de cada slide
     function getSlideWidth() {
         const slide = slides[0];
         const style = window.getComputedStyle(slide);
         return slide.offsetWidth + parseInt(style.marginRight || 0) + parseInt(style.marginLeft || 0) + 30; // 30 es el gap
     }
 
-    function moveSlide() {
+    function moveSlide(timestamp) {
+        if (!lastTime) lastTime = timestamp;
+        const deltaTime = timestamp - lastTime;
+        lastTime = timestamp;
+
+        // Pausar al hacer hover
         if (isMouseOver) {
             animationId = requestAnimationFrame(moveSlide);
             return;
@@ -221,27 +228,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentTransform = getComputedStyle(track).transform;
         let currentX = 0;
         if (currentTransform !== 'none') {
-            currentX = parseInt(currentTransform.split(',')[4]) || 0;
+            currentX = parseFloat(currentTransform.split(',')[4]) || 0;
         }
 
-        // Movemos 1px a la izquierda
-        currentX -= 1;
+        // Mover el carrusel
+        currentX -= VELOCITY;
         track.style.transform = `translateX(${currentX}px)`;
 
         // Si el primer slide ha salido completamente
         const slideWidth = getSlideWidth();
         if (currentX <= -slideWidth) {
-            // Movemos el primer slide al final sin reset
+            // Mover el primer slide al final
             const firstSlide = track.firstElementChild;
             track.appendChild(firstSlide);
-            // Ajustamos la posición para compensar el movimiento
+            // Ajustar la posición
             track.style.transform = `translateX(${currentX + slideWidth}px)`;
         }
 
         animationId = requestAnimationFrame(moveSlide);
     }
 
-    // Manejadores de eventos para pausar/reanudar
+    // Event listeners para pausar/reanudar en hover
     track.addEventListener('mouseenter', () => {
         isMouseOver = true;
     });
@@ -250,15 +257,16 @@ document.addEventListener('DOMContentLoaded', function() {
         isMouseOver = false;
     });
 
-    // Iniciamos la animación
-    moveSlide();
+    // Iniciar la animación
+    moveSlide(performance.now());
 
-    // Ajustamos cuando cambia el tamaño de la ventana
+    // Ajustar cuando cambia el tamaño de la ventana
     window.addEventListener('resize', () => {
         if (animationId) {
             cancelAnimationFrame(animationId);
         }
+        lastTime = 0;
         track.style.transform = 'translateX(0)';
-        moveSlide();
+        moveSlide(performance.now());
     });
 });

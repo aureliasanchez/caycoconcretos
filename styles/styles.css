@@ -1,6 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 
+/* Prevenir desbordamiento horizontal en móviles */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Asegurar que todo el contenido respete el ancho de la ventana */
+.container, 
+.row, 
+.mil-top-panel-content,
+.mil-banner,
+.mil-background-grid,
+.carrusel-infinito,
+.elementos-grid,
+.opciones-secundarias {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .mil-top-panel .mil-top-panel-content {
+        padding: 0 15px;
+    }
+
+    .elementos-grid {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .opciones-secundarias {
+        padding: 10px;
+    }
+
+    .mil-background-grid {
+        left: 0;
+        width: 100%;
+    }
+}
+
 .whatsapp-float {
   position: fixed;
   width: 60px;
@@ -1709,7 +1750,7 @@ top panel
   justify-content: space-between;
   align-items: center;
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
-  padding: 0 170px;
+  padding: 0 10%;
 }
 
 .mil-top-panel .mil-top-panel-content .mil-logo {
@@ -3444,12 +3485,52 @@ Carrucel de img
     overflow: hidden;
     position: relative;
     padding: 20px 0;
+    margin: 0;
 }
 
 .carrusel-track {
     display: flex;
     gap: 30px;
     transform: translateX(0);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .mil-portfolio-grid {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mil-service-card,
+    .mil-service-card-black,
+    .mil-service-card-red {
+        padding: 30px 15px;
+    }
+
+    .mil-sidebar-frame {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .mil-contact-frame {
+        padding: 15px;
+    }
+}
+
+/* Ajustes adicionales para elementos que podrían causar desbordamiento */
+img, 
+video, 
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.mil-illustration,
+.mil-portfolio-item,
+.mil-blog-card {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .carrusel-slide {
