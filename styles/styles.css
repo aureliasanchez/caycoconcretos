@@ -3148,7 +3148,7 @@ img.mfp-img {
     background-color: #f0f0f0;
     border-color: #999;
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .elemento-lista {
@@ -3156,7 +3156,7 @@ img.mfp-img {
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     color: #333;
@@ -3165,7 +3165,7 @@ img.mfp-img {
 
 .elemento-lista:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .elemento-lista:hover img {
@@ -3198,7 +3198,7 @@ img.mfp-img {
     border-radius: 5px;
     padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .elementos-grid {
@@ -3242,8 +3242,17 @@ img.mfp-img {
     .elementos-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .elemento-lista img {
         height: 180px;
+    }
+}
+
+/* 
+Correcciones
+ */
+@media (min-width: 576px) {
+    .col-sm-4 {
+        width: 25% !important;
     }
 }
