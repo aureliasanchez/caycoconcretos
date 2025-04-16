@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Bombeos | CAYCO</title>
@@ -10,17 +11,20 @@
     <meta name="language" content="es-mx" />
 
     <!-- Descripción de la página -->
-    <meta name="description" content="CAYCO ofrece servicios de bombeo de materiales con diferentes métodos, incluyendo tiro directo, bomba pluma y bomba estacionaria, para optimizar la entrega de concreto." />
+    <meta name="description"
+        content="CAYCO ofrece servicios de bombeo de materiales con diferentes métodos, incluyendo tiro directo, bomba pluma y bomba estacionaria, para optimizar la entrega de concreto." />
 
     <!-- Palabras clave -->
-    <meta name="keywords" content="bombeo de materiales, tiro directo, bomba pluma, bomba estacionaria, CAYCO, construcción, concreto" />
+    <meta name="keywords"
+        content="bombeo de materiales, tiro directo, bomba pluma, bomba estacionaria, CAYCO, construcción, concreto" />
 
     <!-- URL canónica -->
     <link rel="canonical" href="https://cayco.netlify.app/service-3" />
 
     <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="Bombeo de Materiales | CAYCO" />
-    <meta property="og:description" content="Descubre los métodos de bombeo de materiales que ofrece CAYCO para asegurar la eficiente entrega de concreto en tus proyectos." />
+    <meta property="og:description"
+        content="Descubre los métodos de bombeo de materiales que ofrece CAYCO para asegurar la eficiente entrega de concreto en tus proyectos." />
     <meta property="og:url" content="https://cayco.netlify.app/service-3" />
     <meta property="og:image" content="https://cayco.netlify.app/img/logo/logo.png" />
     <meta property="og:image:alt" content="Logo de CAYCO" />
@@ -30,61 +34,63 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Bombeo de Materiales | CAYCO" />
-    <meta name="twitter:description" content="Servicios de bombeo de materiales de CAYCO, incluyendo tiro directo, bomba pluma y bomba estacionaria." />
+    <meta name="twitter:description"
+        content="Servicios de bombeo de materiales de CAYCO, incluyendo tiro directo, bomba pluma y bomba estacionaria." />
     <meta name="twitter:image" content="https://cayco.netlify.app/img/logo/logo.png" />
 
     <!-- Favicon -->
-    <link rel="icon" href="img/logo/logoRojo.png" type="image/png">
+    <link rel="icon" href="img/logo/nuevo/icono.webp" type="image/png">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/scss/style.scss">
     <link rel="stylesheet" href="styles/css/plugins/bootstrap-grid.css">
     <link rel="stylesheet" href="styles/css/plugins/swiper.min.css">
     <link rel="stylesheet" href="styles/css/plugins/magnific-popup.css">
     <link rel="stylesheet" href="styles/styles2.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <script>
         // Inicializar Mixpanel o la herramienta de analítica
-        (function(f,b){
-            if(!b.__SV){
-                var a,e,i,g;
-                window.mixpanel=b;
-                b._i=[];
-                b.init=function(a,e,d){
-                    function f(b,h){
-                        var a=h.split(".");
-                        2==a.length&&(b=b[a[0]],h=a[1]);
-                        b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}
+        (function (f, b) {
+            if (!b.__SV) {
+                var a, e, i, g;
+                window.mixpanel = b;
+                b._i = [];
+                b.init = function (a, e, d) {
+                    function f(b, h) {
+                        var a = h.split(".");
+                        2 == a.length && (b = b[a[0]], h = a[1]);
+                        b[h] = function () { b.push([h].concat(Array.prototype.slice.call(arguments, 0))) }
                     }
-                    var c=b;
-                    "undefined"!==typeof d?c=b[d]=[]:d="mixpanel";
-                    c.people=c.people||[];
-                    c.toString=function(b){
-                        var a="mixpanel";
-                        "mixpanel"!==d&&(a+="."+d);
-                        b||(a+=" (stub)");
+                    var c = b;
+                    "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";
+                    c.people = c.people || [];
+                    c.toString = function (b) {
+                        var a = "mixpanel";
+                        "mixpanel" !== d && (a += "." + d);
+                        b || (a += " (stub)");
                         return a
                     };
-                    c.people.toString=function(){return c.toString(1)+".people (stub)"};
-                    i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-                    for(g=0;g<i.length;g++)f(c,i[g]);
-                    b._i.push([a,e,d])
+                    c.people.toString = function () { return c.toString(1) + ".people (stub)" };
+                    i = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                    for (g = 0; g < i.length; g++)f(c, i[g]);
+                    b._i.push([a, e, d])
                 };
-                b.__SV=1.2;
-                a=f.createElement("script");
-                a.type="text/javascript";
-                a.async=!0;
-                a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
-                    MIXPANEL_CUSTOM_LIB_URL:
+                b.__SV = 1.2;
+                a = f.createElement("script");
+                a.type = "text/javascript";
+                a.async = !0;
+                a.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+                    MIXPANEL_CUSTOM_LIB_URL :
                     "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
-                e=f.getElementsByTagName("script")[0];
-                e.parentNode.insertBefore(a,e)
+                e = f.getElementsByTagName("script")[0];
+                e.parentNode.insertBefore(a, e)
             }
-        })(document,window.mixpanel||[]);
+        })(document, window.mixpanel || []);
         mixpanel.init("f3f9766291078d87511d3244f603163f");
-    
+
         // Registro de vista de página
         mixpanel.track("Page_View", {
             page_name: "Bombeo de Materiales",
@@ -92,7 +98,7 @@
             referrer: document.referrer,
             device: navigator.userAgent
         });
-    
+
         // Función para rastrear clics en elementos
         function trackClick(elementName, section) {
             mixpanel.track("Element_Click", {
@@ -101,27 +107,28 @@
                 page_name: "Bombeo de Materiales"
             });
         }
-    
+
         // Rastrear clics en los botones principales
-        document.querySelector(".mil-button").addEventListener("click", function() {
+        document.querySelector(".mil-button").addEventListener("click", function () {
             trackClick("Gestionar Proyecto", "Header");
         });
-    
+
         // Rastrear clic en WhatsApp
-        document.querySelector(".whatsapp-float").addEventListener("click", function() {
+        document.querySelector(".whatsapp-float").addEventListener("click", function () {
             trackClick("WhatsApp", "Floating Button");
         });
-    
+
         // Rastrear clics en secciones específicas
-        document.querySelectorAll("h2, h3").forEach(function(header) {
-            header.addEventListener("click", function() {
+        document.querySelectorAll("h2, h3").forEach(function (header) {
+            header.addEventListener("click", function () {
                 trackClick(header.textContent.trim(), "Service Section");
             });
         });
     </script>
-    
+
 
 </head>
+
 <body>
 
 
@@ -135,9 +142,9 @@
         <div class="container-fluid">
             <div class="mil-top-panel-content">
                 <a href="index.html" class="mil-logo">
-                    <img src="img/logo/logoRojo.png" loading="lazy" alt="Logo" style="width: 130px;">
+                    <img src="img/logo/nuevo/cayco.webp" loading="lazy" alt="Logo" style="width: 130px;">
                 </a>
-    
+
                 <div class="mil-navigation mil-light">
                     <nav>
                         <ul>
@@ -162,17 +169,18 @@
                         </ul>
                     </nav>
                 </div>
-    
+
                 <!-- right buttons -->
                 <div class="mil-top-panel-buttons">
-                    <a href="contact.html#contactForm" class="mil-button mil-sm limp text-center" onclick="trackClick('Gestionar Proyecto', 'Header')">Gestionar Proyecto</a>
-    
+                    <a href="contact.html#contactForm" class="mil-button mil-sm limp text-center"
+                        onclick="trackClick('Gestionar Proyecto', 'Header')">Gestionar Proyecto</a>
+
                     <div class="mil-menu-btn">
                         <span></span>
                     </div>
                 </div>
                 <!-- right buttons end -->
-    
+
             </div>
         </div>
     </div>
@@ -180,7 +188,8 @@
 
     <!-- banner -->
     <section class="mil-banner mil-banner-sm">
-        <img src="/img/photo/service1.jpg" loading="lazy" class="mil-bg-img mil-scale" data-value-1=".4" data-value-2="1.4" alt="image" style="object-position: top;" />
+        <img src="/img/photo/service1.jpg" loading="lazy" class="mil-bg-img mil-scale" data-value-1=".4"
+            data-value-2="1.4" alt="image" style="object-position: top;" />
 
         <div class="mil-overlay"></div>
 
@@ -208,8 +217,10 @@
             <div class="row justify-content-between">
                 <div class="col-lg-4">
                     <!-- Description Item 1 -->
-                    <img src="/img/photo/directo.png" class="w-100 mil-up mil-mb-60" alt="Tiro directo" style="border-radius: 20px;">
-                    <h2 class="mil-upper mil-up mil-mb-60" onclick="trackClick('Tiro directo', 'Section')">Tiro directo:</h2>
+                    <img src="/img/photo/directo.png" class="w-100 mil-up mil-mb-60" alt="Tiro directo"
+                        style="border-radius: 20px;">
+                    <h2 class="mil-upper mil-up mil-mb-60" onclick="trackClick('Tiro directo', 'Section')">Tiro directo:
+                    </h2>
                     <div class="mil-text mil-up mil-mb-60">
                         <p>Comúnmente utilizado donde la olla tiene acceso hasta el lugar del colado</strong>
                     </div>
@@ -218,8 +229,10 @@
 
                 <div class="col-lg-4">
                     <!-- Description Item 2 -->
-                    <img src="/img/photo/bomba.png" class="w-100 mil-up mil-mb-60" alt="Tiro de bomba" style="border-radius: 20px;">
-                    <h3 class="mil-upper mil-up mil-mb-60" onclick="trackClick('Bomba pluma', 'Section')">Bomba pluma:</h3>
+                    <img src="/img/photo/bomba.png" class="w-100 mil-up mil-mb-60" alt="Tiro de bomba"
+                        style="border-radius: 20px;">
+                    <h3 class="mil-upper mil-up mil-mb-60" onclick="trackClick('Bomba pluma', 'Section')">Bomba pluma:
+                    </h3>
                     <div class="row justify-content-between">
                         <div class="col-lg-12">
                             <div class="mil-text mil-up mil-mb-30">
@@ -233,13 +246,16 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <img src="/img/photo/estacionaria.png" class="w-100 mil-up mil-mb-60" alt="Bomba Estacionaria" style="border-radius: 20px;">
-                    <h3 class="mil-upper mil-up mil-mb-60" onclick="trackClick('Bomba estacionaria', 'Section')">Bomba estacionaria:</h3>
+                    <img src="/img/photo/estacionaria.png" class="w-100 mil-up mil-mb-60" alt="Bomba Estacionaria"
+                        style="border-radius: 20px;">
+                    <h3 class="mil-upper mil-up mil-mb-60" onclick="trackClick('Bomba estacionaria', 'Section')">Bomba
+                        estacionaria:</h3>
                     <div class="row justify-content-between">
                         <div class="col-lg-12">
                             <div class="mil-text mil-up mil-mb-30">
                                 <p>
-                                    Se utiliza para obras donde la bomba pluma no tiene acceso o donde se requiere mayor distancia de bombeo.
+                                    Se utiliza para obras donde la bomba pluma no tiene acceso o donde se requiere mayor
+                                    distancia de bombeo.
                                 </p>
                             </div>
                         </div>
@@ -250,15 +266,16 @@
         </div>
     </section>
 
-    
+
     <!-- footer section  -->
     <footer class="mil-relative">
-        <img src="img/photo/footer1.0.png" loading="lazy" class="mil-bg-img mil-parallax" alt="image" style="object-position: top;" data-value-1="-25%" data-value-2="23%">
-    
+        <img src="img/photo/footer1.0.png" loading="lazy" class="mil-bg-img mil-parallax" alt="image"
+            style="object-position: top;" data-value-1="-25%" data-value-2="23%">
+
         <div class="mil-overlay"></div>
         <div class="container mil-p-120-90">
             <div class="mil-background-grid"></div>
-    
+
             <div class="row align-items-end">
                 <div class="col-lg-12">
                     <div class="row">
@@ -279,7 +296,7 @@
                             <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Tulancingo</span>
                             <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color">
                                 <p class="w-color">Libramiento la joya 200 El cerezo,
-                                    Tulancingo Hidalgo C.P 4366 
+                                    Tulancingo Hidalgo C.P 4366
                                 </p>
                                 <p class="w-color">(775) 75 3 38 11</p>
                                 <p class="w-color">(775) 11 2 01 60</p>
@@ -296,7 +313,8 @@
                         <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                             <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Pachuca</span>
                             <div class="mil-text-sm mil-up mil-light-soft mil-mb-30">
-                                <p class="w-color">Boulevard Las Torres S/N, Mineral de la Reforma, Hidalgo, Mexico 75169</p>
+                                <p class="w-color">Boulevard Las Torres S/N, Mineral de la Reforma, Hidalgo, Mexico
+                                    75169</p>
                                 <p class="w-color">(775) 75 3 38 11</p>
                                 <p class="w-color">(775) 11 2 01 60</p>
                                 <p class="w-color">(775) 75 3 40 46</p>
@@ -308,7 +326,7 @@
                                     <li>Sabado: 8:30 a 2:00</li>
                                 </ul>
 
-                                
+
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
@@ -329,20 +347,20 @@
                         <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                             <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Redes Sociales</span>
                             <br>
-                            <a href="https://www.instagram.com/caycoconcretos/">
-                                <i class="fab fa-instagram fa-2x text-white"></i>
-                            </a>
                             <a href="https://www.facebook.com/CaycoConcretos">
-                                <i class="fab fa-facebook-f fa-2x text-white"></i>
+                                <i class="fab fa-facebook-f fa-2x text-white textBigger3"></i>
+                            </a>
+                            <a href="https://www.instagram.com/caycoconcretos/">
+                                <i class="fab fa-instagram fa-2x text-white textBigger3"></i>
                             </a>
                             <a href="https://www.linkedin.com/company/cayco-construction/posts/?feedView=all">
-                                <i class="fab fa-linkedin-in fa-2x text-white"></i>
+                                <i class="fab fa-linkedin-in fa-2x text-white textBigger3"></i>
                             </a>
                             <a href="https://www.youtube.com/@caycoconcretos8340">
-                                <i class="fab fa-youtube fa-2x text-white"></i>
+                                <i class="fab fa-youtube fa-2x text-white textBigger3"></i>
                             </a>
                             <a href="https://www.tiktok.com/@caycoconcretos_mx">
-                                <i class="fab fa-tiktok fa-2x text-white"></i>
+                                <i class="fab fa-tiktok fa-2x text-white textBigger3"></i>
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
@@ -361,7 +379,7 @@
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                             <a href="index.html" class="mil-footer-logo mil-up mil-mb-30">
-                                <img src="img/logo/logoRojo.png" loading="lazy" alt="Logo" style="width: 130px;">
+                                <img src="img/logo/nuevo/cayco.webp" loading="lazy" alt="Logo" style="width: 130px;">
                             </a>
                         </div>
                     </div>
@@ -370,7 +388,9 @@
         </div>
         <div class="container-fluid">
             <div class="mil-footer-bottom">
-                <p class="mil-light-soft mil-mb-15">© <script>document.write(new Date().getFullYear())</script> Cayco. Todos los derechos reservados.</p>
+                <p class="mil-light-soft mil-mb-15">©
+                    <script>document.write(new Date().getFullYear())</script> Cayco. Todos los derechos reservados.
+                </p>
                 <ul class="mil-light-soft mil-mb-15">
                     <!-- Social links would go here -->
                 </ul>
@@ -387,9 +407,11 @@
     <script src="app.js"></script>
 
 
-    <a href="https://wa.me/527751340586?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/527751340586?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios"
+        class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-     
+
 </body>
+
 </html>

@@ -1,787 +1,974 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cayco</title>
+    <link rel="icon" href="img/logo/nuevo/icono.webp" type="image/png" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/scss/style.scss" />
+    <link rel="stylesheet" href="styles/css/plugins/bootstrap-grid.css" />
+    <link rel="stylesheet" href="styles/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="styles/css/plugins/magnific-popup.css" />
+    <link rel="stylesheet" href="styles/styles2.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cayco</title>
-  <link rel="icon" href="img/logo/logoRojo.png" type="image/png" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="stylesheet" href="styles/scss/style.scss" />
-  <link rel="stylesheet" href="styles/css/plugins/bootstrap-grid.css" />
-  <link rel="stylesheet" href="styles/css/plugins/swiper.min.css" />
-  <link rel="stylesheet" href="styles/css/plugins/magnific-popup.css" />
-  <link rel="stylesheet" href="styles/styles2.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
-  <script type="text/javascript">
-    // Inicializa Mixpanel
-    (function (e, a) {
-      if (!a.__SV) {
-        var b = window;
-        try {
-          var c,
-            l,
-            i,
-            j = b.location,
-            g = j.hash;
-          c = function (a, b) {
-            return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null;
-          };
-          g &&
-            c(g, "state") &&
-            ((i = JSON.parse(decodeURIComponent(c(g, "state")))),
+    <script type="text/javascript">
+      // Inicializa Mixpanel
+      (function (e, a) {
+        if (!a.__SV) {
+          var b = window;
+          try {
+            var c,
+              l,
+              i,
+              j = b.location,
+              g = j.hash;
+            c = function (a, b) {
+              return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null;
+            };
+            g &&
+              c(g, "state") &&
+              ((i = JSON.parse(decodeURIComponent(c(g, "state")))),
               "mpeditor" === i.action &&
-              (b.sessionStorage.setItem("_mpcehash", g),
+                (b.sessionStorage.setItem("_mpcehash", g),
                 history.replaceState(
                   i.desiredHash || "",
                   e.title,
                   j.pathname + j.search
                 )));
-        } catch (m) { }
-        var k, h;
-        window.mixpanel = a;
-        a._i = [];
-        a.init = function (b, c, f) {
-          function e(b, a) {
-            var c = a.split(".");
-            2 == c.length && ((b = b[c[0]]), (a = c[1]));
-            b[a] = function () {
-              b.push([a].concat(Array.prototype.slice.call(arguments, 0)));
+          } catch (m) {}
+          var k, h;
+          window.mixpanel = a;
+          a._i = [];
+          a.init = function (b, c, f) {
+            function e(b, a) {
+              var c = a.split(".");
+              2 == c.length && ((b = b[c[0]]), (a = c[1]));
+              b[a] = function () {
+                b.push([a].concat(Array.prototype.slice.call(arguments, 0)));
+              };
+            }
+            var d = a;
+            "undefined" !== typeof f ? (d = a[f] = []) : (f = "mixpanel");
+            d.people = d.people || [];
+            d.toString = function (b) {
+              var a = "mixpanel";
+              "mixpanel" !== f && (a += "." + f);
+              b || (a += " (stub)");
+              return a;
             };
-          }
-          var d = a;
-          "undefined" !== typeof f ? (d = a[f] = []) : (f = "mixpanel");
-          d.people = d.people || [];
-          d.toString = function (b) {
-            var a = "mixpanel";
-            "mixpanel" !== f && (a += "." + f);
-            b || (a += " (stub)");
-            return a;
+            d.people.toString = function () {
+              return d.toString(1) + ".people (stub)";
+            };
+            k =
+              "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(
+                " "
+              );
+            for (h = 0; h < k.length; h++) e(d, k[h]);
+            a._i.push([b, c, f]);
           };
-          d.people.toString = function () {
-            return d.toString(1) + ".people (stub)";
-          };
-          k =
-            "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(
-              " "
-            );
-          for (h = 0; h < k.length; h++) e(d, k[h]);
-          a._i.push([b, c, f]);
-        };
-        a.__SV = 1.2;
-        b = e.createElement("script");
-        b.type = "text/javascript";
-        b.async = !0;
-        b.src =
-          "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL
-            ? MIXPANEL_CUSTOM_LIB_URL
-            : "file:" === e.location.protocol &&
-              "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)
+          a.__SV = 1.2;
+          b = e.createElement("script");
+          b.type = "text/javascript";
+          b.async = !0;
+          b.src =
+            "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL
+              ? MIXPANEL_CUSTOM_LIB_URL
+              : "file:" === e.location.protocol &&
+                "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)
               ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"
               : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";
-        c = e.getElementsByTagName("script")[0];
-        c.parentNode.insertBefore(b, c);
+          c = e.getElementsByTagName("script")[0];
+          c.parentNode.insertBefore(b, c);
+        }
+      })(document, window.mixpanel || []);
+      mixpanel.init("f3f9766291078d87511d3244f603163f"); // Reemplaza con tu token de Mixpanel
+
+      // Función para capturar tipo de dispositivo
+      function getDeviceType() {
+        const width = window.innerWidth;
+        return width <= 768 ? "Móvil" : width <= 1024 ? "Tablet" : "Desktop";
       }
-    })(document, window.mixpanel || []);
-    mixpanel.init("f3f9766291078d87511d3244f603163f"); // Reemplaza con tu token de Mixpanel
 
-    // Función para capturar tipo de dispositivo
-    function getDeviceType() {
-      const width = window.innerWidth;
-      return width <= 768 ? "Móvil" : width <= 1024 ? "Tablet" : "Desktop";
-    }
+      // Función para capturar información del navegador
+      function getBrowserInfo() {
+        return navigator.userAgent;
+      }
 
-    // Función para capturar información del navegador
-    function getBrowserInfo() {
-      return navigator.userAgent;
-    }
+      // Evento: Page_View
+      mixpanel.track("Page_View", {
+        page_name: "Acerca de Nosotros",
+        url: window.location.href,
+        referrer: document.referrer || "Directo",
+        device: getDeviceType(),
+        browser: getBrowserInfo(),
+      });
 
-    // Evento: Page_View
-    mixpanel.track("Page_View", {
-      page_name: "Acerca de Nosotros",
-      url: window.location.href,
-      referrer: document.referrer || "Directo",
-      device: getDeviceType(),
-      browser: getBrowserInfo(),
-    });
-
-    // Evento: Testimonial_View
-    document.addEventListener("DOMContentLoaded", function () {
-      const testimonials = document.querySelectorAll(".swiper-slide");
-      testimonials.forEach((testimonial, index) => {
-        testimonial.addEventListener("mouseenter", function () {
-          mixpanel.track("Testimonial_View", {
-            testimonial_index: index + 1,
-            testimonial_name:
-              this.querySelector(".mil-name h6")?.innerText || "Desconocido",
-            testimonial_role:
-              this.querySelector(".mil-name p")?.innerText || "Desconocido",
-            page_name: "Acerca de Nosotros",
+      // Evento: Testimonial_View
+      document.addEventListener("DOMContentLoaded", function () {
+        const testimonials = document.querySelectorAll(".swiper-slide");
+        testimonials.forEach((testimonial, index) => {
+          testimonial.addEventListener("mouseenter", function () {
+            mixpanel.track("Testimonial_View", {
+              testimonial_index: index + 1,
+              testimonial_name:
+                this.querySelector(".mil-name h6")?.innerText || "Desconocido",
+              testimonial_role:
+                this.querySelector(".mil-name p")?.innerText || "Desconocido",
+              page_name: "Acerca de Nosotros",
+            });
           });
         });
       });
-    });
 
-    // Evento: CTA_Click
-    document.querySelectorAll("a, button").forEach((cta) => {
-      cta.addEventListener("click", function () {
-        mixpanel.track("CTA_Click", {
-          button_name: this.innerText.trim() || "Sin Nombre",
-          page_name: "Acerca de Nosotros",
-          action: this.getAttribute("href") || "Sin Acción",
-          cta_type: this.classList.contains("mil-button")
-            ? "Primario"
-            : "Secundario",
-        });
-      });
-    });
-
-    // Evento: WhatsApp_Click
-    document
-      .querySelectorAll('[href*="https://wa.me"]')
-      .forEach((whatsapp) => {
-        whatsapp.addEventListener("click", function () {
-          mixpanel.track("WhatsApp_Click", {
+      // Evento: CTA_Click
+      document.querySelectorAll("a, button").forEach((cta) => {
+        cta.addEventListener("click", function () {
+          mixpanel.track("CTA_Click", {
+            button_name: this.innerText.trim() || "Sin Nombre",
             page_name: "Acerca de Nosotros",
-            user_intent: "Consulta General",
-            time_of_day: new Date().toLocaleTimeString(),
+            action: this.getAttribute("href") || "Sin Acción",
+            cta_type: this.classList.contains("mil-button")
+              ? "Primario"
+              : "Secundario",
           });
         });
       });
-  </script>
-</head>
 
-<body>
-  <div class="mil-progress-track">
-    <div class="mil-progress"></div>
-  </div>
+      // Evento: WhatsApp_Click
+      document
+        .querySelectorAll('[href*="https://wa.me"]')
+        .forEach((whatsapp) => {
+          whatsapp.addEventListener("click", function () {
+            mixpanel.track("WhatsApp_Click", {
+              page_name: "Acerca de Nosotros",
+              user_intent: "Consulta General",
+              time_of_day: new Date().toLocaleTimeString(),
+            });
+          });
+        });
+    </script>
+  </head>
 
-  <!-- header section  -->
-  <div class="mil-top-panel">
-    <div class="container-fluid">
-      <div class="mil-top-panel-content">
-        <a href="index.html" class="mil-logo">
-          <img src="img/logo/logoRojo.png" loading="lazy" alt="Logo" style="width: 130px" />
-        </a>
+  <body>
+    <div class="mil-progress-track">
+      <div class="mil-progress"></div>
+    </div>
 
-        <div class="mil-navigation mil-light">
-          <nav>
-            <ul>
-              <li class="mil-light">
-                <a href="index.html">Inicio</a>
-              </li>
-              <li class="mil-light">
-                <a href="services.html">Servicios</a>
-              </li>
-              <li class="mil-light">
-                <a href="proyects.html">Proyectos</a>
-              </li>
-              <li class="mil-light">
-                <a href="galeria.html">Galeria</a>
-              </li>
-              <li class="mil-light">
-                <a href="about.html">Acerca de</a>
-              </li>
-              <li class="mil-light">
-                <a href="https://www.cayco.mx/blog/author/admin/">Blog</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+    <!-- header section  -->
+    <div class="mil-top-panel">
+      <div class="container-fluid">
+        <div class="mil-top-panel-content">
+          <a href="index.html" class="mil-logo">
+            <img
+              src="img/logo/nuevo/cayco.webp"
+              loading="lazy"
+              alt="Logo"
+              style="width: 130px"
+            />
+          </a>
 
-        <!-- right buttons -->
-        <div class="mil-top-panel-buttons">
-          <a href="contact.html#contactForm" class="mil-button mil-sm limp text-center">Gestionar Proyecto</a>
-
-          <div class="mil-menu-btn">
-            <span></span>
+          <div class="mil-navigation mil-light">
+            <nav>
+              <ul>
+                <li class="mil-light">
+                  <a href="index.html">Inicio</a>
+                </li>
+                <li class="mil-light">
+                  <a href="services.html">Servicios</a>
+                </li>
+                <li class="mil-light">
+                  <a href="proyects.html">Proyectos</a>
+                </li>
+                <li class="mil-light">
+                  <a href="galeria.html">Galeria</a>
+                </li>
+                <li class="mil-light">
+                  <a href="about.html">Acerca de</a>
+                </li>
+                <li class="mil-light">
+                  <a href="https://www.cayco.mx/blog/author/admin/">Blog</a>
+                </li>
+              </ul>
+            </nav>
           </div>
-        </div>
-        <!-- right buttons end -->
-      </div>
-    </div>
-  </div>
 
-  <!-- banner -->
-  <section class="mil-banner mil-banner-sm">
-    <img src="/img/photo/about.jpg" loading="lazy" class="mil-bg-img mil-scale" data-value-1=".4" data-value-2="1.4"
-      alt="image" style="object-position: top" />
+          <!-- right buttons -->
+          <div class="mil-top-panel-buttons">
+            <a
+              href="contact.html#contactForm"
+              class="mil-button mil-sm limp text-center"
+              >Gestionar Proyecto</a
+            >
 
-    <div class="mil-overlay"></div>
-
-    <div class="container">
-      <div class="mil-background-grid mil-top-space"></div>
-
-      <div class="mil-banner-content mil-center">
-        <div class="mil-mb-90">
-          <h1 class="mil-light mil-upper mil-mb-30">Sobre Nosotros</h1>
-          <ul class="mil-breadcrumbs mil-center">
-            <li><a href="index.html" class="limpio">Inicio</a></li>
-            <li><a href="/about.html" class="limpio">Sobre Nosotros</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- banner end -->
-
-  <!-- company two slider -->
-  <section class="">
-    <br />
-    <div class="container mil-p-0-30">
-      <!-- <div class="mil-background-grid mil-softened" /> -->
-
-      <div class="row justify-content-between align-items-center flex-sm-row-reverse">
-        <div class="col-lg-5">
-          <div class="mil-mb-90">
-            <span class="mil-suptitle mil-upper mil-up mil-mb-30">Trabajos</span>
-            <h2 class="mil-upper mil-up mil-mb-30">Lo que hemos hecho</h2>
-            <p class="mil-up mil-mb-40">
-              Cada proyecto que realizamos es un reflejo de nuestro compromiso
-              con la calidad, la innovación y la eficiencia. Desde grandes
-              infraestructuras hasta proyectos residenciales, en CAYCO
-              Concretos hemos transformado ideas en estructuras sólidas que
-              perduran en el tiempo.<br />
-              Descubre nuestros proyectos y cómo hemos ayudado a construir el
-              futuro con soluciones de concreto premezclado de alta calidad.
-            </p>
-            <div class="mil-up">
-              <a href="proyects.html" class="mil-link mil-upper">
-                Ver Proyectos
-                <span class="mil-arrow"><img src="/img/icons/1.svg" loading="lazy" alt="arrow" /></span>
-              </a>
+            <div class="mil-menu-btn">
+              <span></span>
             </div>
           </div>
+          <!-- right buttons end -->
         </div>
-        <div class="col-lg-6">
-          <div class="mil-illustration-slider-frame mil-up mil-mb-90">
-            <div class="swiper-container mil-illustration-slider">
-              <!-- Slider items -->
-              <div class="swiper-slide">
-                <div class="mil-illustration" data-swiper-parallax-x="50" data-swiper-parallax-scale="1.3">
-                  <div class="mil-image-frame">
-                    <img src="/img/photo/car1.jpg" loading="lazy" class="border-radius" alt="image" />
+      </div>
+    </div>
+
+    <!-- banner -->
+    <section class="mil-banner mil-banner-sm">
+      <img
+        src="/img/photo/about.jpg"
+        loading="lazy"
+        class="mil-bg-img mil-scale"
+        data-value-1=".4"
+        data-value-2="1.4"
+        alt="image"
+        style="object-position: top"
+      />
+
+      <div class="mil-overlay"></div>
+
+      <div class="container">
+        <div class="mil-background-grid mil-top-space"></div>
+
+        <div class="mil-banner-content mil-center">
+          <div class="mil-mb-90">
+            <h1 class="mil-light mil-upper mil-mb-30">Sobre Nosotros</h1>
+            <ul class="mil-breadcrumbs mil-center">
+              <li><a href="index.html" class="limpio">Inicio</a></li>
+              <li><a href="/about.html" class="limpio">Sobre Nosotros</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- banner end -->
+
+    <!-- company two slider -->
+    <section class="">
+      <br />
+      <div class="container mil-p-0-30">
+        <!-- <div class="mil-background-grid mil-softened" /> -->
+
+        <div
+          class="row justify-content-between align-items-center flex-sm-row-reverse"
+        >
+          <div class="col-lg-5">
+            <div class="mil-mb-90">
+              <span class="mil-suptitle mil-upper mil-up mil-mb-30"
+                >Trabajos</span
+              >
+              <h2 class="mil-upper mil-up mil-mb-30">Lo que hemos hecho</h2>
+              <p class="mil-up mil-mb-40">
+                Cada proyecto que realizamos es un reflejo de nuestro compromiso
+                con la calidad, la innovación y la eficiencia. Desde grandes
+                infraestructuras hasta proyectos residenciales, en CAYCO
+                Concretos hemos transformado ideas en estructuras sólidas que
+                perduran en el tiempo.<br />
+                Descubre nuestros proyectos y cómo hemos ayudado a construir el
+                futuro con soluciones de concreto premezclado de alta calidad.
+              </p>
+              <div class="mil-up">
+                <a href="proyects.html" class="mil-link mil-upper">
+                  Ver Proyectos
+                  <span class="mil-arrow"
+                    ><img src="/img/icons/1.svg" loading="lazy" alt="arrow"
+                  /></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="mil-illustration-slider-frame mil-up mil-mb-90">
+              <div class="swiper-container mil-illustration-slider">
+                <!-- Slider items -->
+                <div class="swiper-slide">
+                  <div
+                    class="mil-illustration"
+                    data-swiper-parallax-x="50"
+                    data-swiper-parallax-scale="1.3"
+                  >
+                    <div class="mil-image-frame">
+                      <img
+                        src="/img/photo/car1.jpg"
+                        loading="lazy"
+                        class="border-radius"
+                        alt="image"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- <div class="mil-illustration-slider-nav mil-up">
+              <!-- <div class="mil-illustration-slider-nav mil-up">
                             <div class="mil-nav-buttons">
                                 <div class="mil-slider-button mil-illustration-prev">Prev</div>
                                 <div class="mil-slider-button mil-illustration-next">Next</div>
                             </div>
                         </div> -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- company two slider end -->
+    </section>
+    <!-- company two slider end -->
 
-  <section class="mil-soft-bg mil-relative">
-    <img src="/img/other/bg.svg" loading="lazy" class="mil-bg-img" alt="image" />
+    <section class="mil-soft-bg mil-relative">
+      <img
+        src="/img/other/bg.svg"
+        loading="lazy"
+        class="mil-bg-img"
+        alt="image"
+      />
 
-    <div class="container mil-p-120-120">
-      <div class="row justify-content-between">
-        <div class="col-lg-4">
-          <div class="mil-mb-60">
-            <span class="mil-suptitle mil-upper mil-up mil-mb-30">Testimonios</span>
-            <h2 class="mil-upper mil-up">LO QUE PIENSAN DE NOSOTROS</h2>
+      <div class="container mil-p-120-120">
+        <div class="row justify-content-between">
+          <div class="col-lg-4">
+            <div class="mil-mb-60">
+              <span class="mil-suptitle mil-upper mil-up mil-mb-30"
+                >Testimonios</span
+              >
+              <h2 class="mil-upper mil-up">LO QUE PIENSAN DE NOSOTROS</h2>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-7 mil-mt-suptitle-offset">
-          <div class="swiper-container mil-reviews-slider">
-            <div class="swiper-wrapper">
-              <!-- Testimonio 1 -->
-              <div class="swiper-slide">
-                <div class="mil-review-frame mil-mb-30">
-                  <div class="mil-reviev-head mil-up d-flex align-items-center">
-                    <div class="mil-left">
-                      <div class="mil-quote">
-                        <img src="/img/icons/12.svg" loading="lazy" alt="icon" class="mil-icon-size" />
+          <div class="col-lg-7 mil-mt-suptitle-offset">
+            <div class="swiper-container mil-reviews-slider">
+              <div class="swiper-wrapper">
+                <!-- Testimonio 1 -->
+                <div class="swiper-slide">
+                  <div class="mil-review-frame mil-mb-30">
+                    <div
+                      class="mil-reviev-head mil-up d-flex align-items-center"
+                    >
+                      <div class="mil-left">
+                        <div class="mil-quote">
+                          <img
+                            src="/img/icons/12.svg"
+                            loading="lazy"
+                            alt="icon"
+                            class="mil-icon-size"
+                          />
+                        </div>
+                        <div class="mil-review-avatar">
+                          <img
+                            src="/img/icons/avatar2.png"
+                            loading="lazy"
+                            alt="Carlos M."
+                            class="mil-avatar-size"
+                          />
+                        </div>
                       </div>
-                      <div class="mil-review-avatar">
-                        <img src="/img/icons/avatar2.png" loading="lazy" alt="Carlos M." class="mil-avatar-size" />
-                      </div>
-                    </div>
-                    <div class="mil-name ms-3">
-                      <h6 class="mil-upper">Carlos M.</h6>
-                      <p class="mil-text-sm mil-dark-soft">Ingeniero Civil</p>
-                    </div>
-                  </div>
-                  <div class="mil-up">
-                    <p class="mil-review-text">
-                      Colaborar con CAYCO en la ampliación de la carretera
-                      México-Tuxpan fue una experiencia excepcional. Su
-                      asesoría técnica especializada y el suministro de
-                      concreto de alta resistencia aseguraron el éxito del
-                      proyecto en tiempo récord.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonio 2 -->
-              <div class="swiper-slide">
-                <div class="mil-review-frame mil-mb-30">
-                  <div class="mil-reviev-head mil-up d-flex align-items-center">
-                    <div class="mil-left">
-                      <div class="mil-quote">
-                        <img src="/img/icons/12.svg" loading="lazy" alt="icon" class="mil-icon-size" />
-                      </div>
-                      <div class="mil-review-avatar">
-                        <img src="/img/icons/avatar2.png" loading="lazy" alt="María G." class="mil-avatar-size" />
+                      <div class="mil-name ms-3">
+                        <h6 class="mil-upper">Carlos M.</h6>
+                        <p class="mil-text-sm mil-dark-soft">Ingeniero Civil</p>
                       </div>
                     </div>
-                    <div class="mil-name ms-3">
-                      <h6 class="mil-upper">María G.</h6>
-                      <p class="mil-text-sm mil-dark-soft">
-                        Contratista de Obras Públicas
+                    <div class="mil-up">
+                      <p class="mil-review-text">
+                        Colaborar con CAYCO en la ampliación de la carretera
+                        México-Tuxpan fue una experiencia excepcional. Su
+                        asesoría técnica especializada y el suministro de
+                        concreto de alta resistencia aseguraron el éxito del
+                        proyecto en tiempo récord.
                       </p>
                     </div>
                   </div>
-                  <div class="mil-up">
-                    <p class="mil-review-text">
-                      En la construcción del nuevo puente en Querétaro,
-                      confiamos en CAYCO para el suministro de concreto
-                      premezclado. Su puntualidad en las entregas y la calidad
-                      del material fueron fundamentales para cumplir con los
-                      estándares exigidos.
-                    </p>
-                  </div>
                 </div>
-              </div>
 
-              <!-- Testimonio 3 -->
-              <div class="swiper-slide">
-                <div class="mil-review-frame mil-mb-30">
-                  <div class="mil-reviev-head mil-up d-flex align-items-center">
-                    <div class="mil-left">
-                      <div class="mil-quote">
-                        <img src="/img/icons/12.svg" loading="lazy" alt="icon" class="mil-icon-size" />
+                <!-- Testimonio 2 -->
+                <div class="swiper-slide">
+                  <div class="mil-review-frame mil-mb-30">
+                    <div
+                      class="mil-reviev-head mil-up d-flex align-items-center"
+                    >
+                      <div class="mil-left">
+                        <div class="mil-quote">
+                          <img
+                            src="/img/icons/12.svg"
+                            loading="lazy"
+                            alt="icon"
+                            class="mil-icon-size"
+                          />
+                        </div>
+                        <div class="mil-review-avatar">
+                          <img
+                            src="/img/icons/avatar2.png"
+                            loading="lazy"
+                            alt="María G."
+                            class="mil-avatar-size"
+                          />
+                        </div>
                       </div>
-                      <div class="mil-review-avatar">
-                        <img src="/img/icons/avatar2.png" loading="lazy" alt="Luis T." class="mil-avatar-size" />
+                      <div class="mil-name ms-3">
+                        <h6 class="mil-upper">María G.</h6>
+                        <p class="mil-text-sm mil-dark-soft">
+                          Contratista de Obras Públicas
+                        </p>
                       </div>
                     </div>
-                    <div class="mil-name ms-3">
-                      <h6 class="mil-upper">Luis T.</h6>
-                      <p class="mil-text-sm mil-dark-soft">
-                        Gerente de Construcción
+                    <div class="mil-up">
+                      <p class="mil-review-text">
+                        En la construcción del nuevo puente en Querétaro,
+                        confiamos en CAYCO para el suministro de concreto
+                        premezclado. Su puntualidad en las entregas y la calidad
+                        del material fueron fundamentales para cumplir con los
+                        estándares exigidos.
                       </p>
                     </div>
                   </div>
-                  <div class="mil-up">
-                    <p class="mil-review-text">
-                      Para nuestro desarrollo residencial en Pachuca,
-                      seleccionamos a CAYCO como proveedor de concreto. Su
-                      innovación en mezclas y el compromiso con la
-                      sostenibilidad añadieron un valor significativo al
-                      proyecto, superando nuestras expectativas.
-                    </p>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="swiper-slide">
+                  <div class="mil-review-frame mil-mb-30">
+                    <div
+                      class="mil-reviev-head mil-up d-flex align-items-center"
+                    >
+                      <div class="mil-left">
+                        <div class="mil-quote">
+                          <img
+                            src="/img/icons/12.svg"
+                            loading="lazy"
+                            alt="icon"
+                            class="mil-icon-size"
+                          />
+                        </div>
+                        <div class="mil-review-avatar">
+                          <img
+                            src="/img/icons/avatar2.png"
+                            loading="lazy"
+                            alt="Luis T."
+                            class="mil-avatar-size"
+                          />
+                        </div>
+                      </div>
+                      <div class="mil-name ms-3">
+                        <h6 class="mil-upper">Luis T.</h6>
+                        <p class="mil-text-sm mil-dark-soft">
+                          Gerente de Construcción
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mil-up">
+                      <p class="mil-review-text">
+                        Para nuestro desarrollo residencial en Pachuca,
+                        seleccionamos a CAYCO como proveedor de concreto. Su
+                        innovación en mezclas y el compromiso con la
+                        sostenibilidad añadieron un valor significativo al
+                        proyecto, superando nuestras expectativas.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Botones de navegación -->
-          <div class="mil-nav-buttons mil-reviews-nav mil-up">
-            <div class="mil-slider-button mil-process-prev">ANTERIOR</div>
-            <div class="mil-slider-button mil-process-next">SIGUIENTE</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Enlazar Font Awesome (si no lo tienes ya en tu proyecto) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
-  <section class="mision-vision-section text-center">
-    <div class="container" style="padding-top: 20px; padding-bottom: 20px">
-      <h2 class="mision-vision-title">Nuestra Filosofía</h2>
-      <p class="mision-vision-text">
-        En CAYCO nos basamos en una misión clara y una visión innovadora para
-        liderar la industria.
-      </p>
-
-      <div class="row justify-content-center">
-        <!-- Misión -->
-        <div class="col-md-5 d-flex justify-content-end">
-          <div class="mision-vision-card">
-            <div class="mision-vision-icon">
-              <i class="fas fa-bullseye"></i>
-            </div>
-            <h3 class="mision-vision-title">Misión</h3>
-            <p class="mision-vision-text">
-              En CAYCO nos apasiona ser el aliado estrategico de nuestros clientes, en la construccion de proyectos solidos y sustentables, produciendo concreto de las mas alta calidad, fomentando un entorno de desarrollo y crecimiento para el exito compartido, otorgando al cliente confiabilidad y una experiencia inolvidable.
-            </p>
-          </div>
-        </div>
-
-        <!-- Visión -->
-        <div class="col-md-5 d-flex justify-content-start">
-          <div class="mision-vision-card">
-            <div class="mision-vision-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <h3 class="mision-vision-title">Visión</h3>
-            <p class="mision-vision-text">
-              Convertirnos en un referente nacional en la industria del concreto, partirndo de la calidad e innovacion tecnologia y sustebtable, destacando la eficiencia tecnica y operativa de nuestros procesos, promoviendo un comportamiento de calidez humano conquistando la lealtad de nuestro cliente interno y consolide la preferencia de compra del cliente externo.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mil-section text-center">
-    <div class="container" style="padding: 10px 0">
-      <h2 class="mil-section-title">Nuestros Valores</h2>
-      <p class="mil-section-text">
-        Nos basamos en principios fundamentales que nos guían en cada paso.
-      </p>
-
-      <div class="row">
-        <div class="col-md-3 d-flex">
-          <div class="card-value">
-            <div class="icon-container">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h3 class="mil-section-title">INTEGRIDAD</h3>
-            <p class="mil-section-text">
-              Valoramos la preferencia de nuestros clientes y de nuestro
-              personal. Estamos comprometidos en cumplir con nuestras acciones
-              de manera puntual, transparente y coherente. Sin miedo a
-              reconocer nuestras fallas y aprender de ellas. Nos comunicamos
-              siempre abiertamente con todos quienes nos rodean.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3 d-flex">
-          <div class="card-value">
-            <div class="icon-container">
-              <i class="fas fa-fire"></i>
-            </div>
-            <h3 class="mil-section-title">PASIÓN</h3>
-            <p class="mil-section-text">
-              Nuestra fuerza interna es la satisfacción total de nuestros
-              clientes (internos y externos), buscamos poner a prueba nuestros
-              límites con nuevos retos para el logro de la excelencia.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3 d-flex">
-          <div class="card-value">
-            <div class="icon-container">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3 class="mil-section-title">PROGRESO</h3>
-            <p class="mil-section-text">
-              Mantenemos un enfoque en la resolución y prevención de problemas
-              y no en conflictos. Generamos esfuerzos en conjunto para el
-              desarrollo de nuevas ideas, métodos y sistemas de trabajo,
-              buscando mejorar día a día nuestras acciones con el medio
-              completo que nos rodea (prójimo, actividades, medio ambiente,
-              etc.).
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3 d-flex">
-          <div class="card-value">
-            <div class="icon-container">
-              <i class="fas fa-hands-helping"></i>
-            </div>
-            <h3 class="mil-section-title">EMPATÍA</h3>
-            <p class="mil-section-text">
-              Entendemos, comprendemos y respetamos las diferentes formas de
-              pensar, actuar y sentir de nuestro personal y clientes,
-              manteniendo un ambiente cordial y franco que nos permite
-              desempeñarnos mejor y resolver con mayor claridad los retos que
-              se nos presentan.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- seccion 3 imagenes -->
-  <section class="three-images-section">
-    <div class="container">
-      <h2 class="section-title">Somos miembros orgullosos de las siguientes asociaciones</h2>
-      <div class="row">
-
-        <!-- Imagen 1 -->
-        <div class="col-md-4 text-center">
-          <img src="img/marcas/canacintra.webp" alt="CANACINTRA" class="team-image" />
-          <p class="image-caption">CANACINTRA</p>
-        </div>
-        <!-- Imagen 2 -->
-        <div class="col-md-4 text-center">
-          <img src="img/marcas/amci.webp" alt="AMCI" class="team-image" />
-          <p class="image-caption">AMCI</p>
-        </div>
-        <!-- Imagen 3 -->
-        <div class="col-md-4 text-center">
-          <img src="img/marcas/imcyc.webp" alt="IMCYC" class="team-image" />
-          <p class="image-caption">IMCYC</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Título del carrusel -->
-  <h2 class="carrusel-title">Nuestros Clientes</h2>
-  <!-- Botón para alternar entre carrusel y lista -->
-  <div class="toggle-view">
-    <button id="toggleViewButton">Cambiar a Lista</button>
-  </div>
-  <!-- Carrusel -->
-  <section class="carrusel-infinito">
-    <div class="carrusel-track" id="carruselTrack">
-
-      <div class="carrusel-slide">
-        <img src="img/marcas/gobiernoHidalgo.webp" alt="Gobierno Hidalgo" loading="lazy" />
-        <p class="carrusel-caption">Gobierno Hidalgo</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/uaeh.webp" alt="Universidad Autónoma del Estado de Hidalgo" loading="lazy" />
-        <p class="carrusel-caption">Universidad Autónoma del Estado de Hidalgo</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/utp.webp" alt="Universidad Politécnica de Tulancingo" loading="lazy" />
-        <p class="carrusel-caption">Universidad Politécnica de Tulancingo</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/utec.webp" alt="Universidad Tecnológica de Tulancingo" loading="lazy" />
-        <p class="carrusel-caption">Universidad Tecnológica de Tulancingo</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/colegioPedroDeGante.webp" alt="Colegio Pedro de Gante" loading="lazy" />
-        <p class="carrusel-caption">Colegio Pedro de Gante</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/colegioAntaresTulancingo.webp" alt="Colegio Antares Tulancingo" loading="lazy" />
-        <p class="carrusel-caption">Colegio Antares Tulancingo</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/sacyr.webp" alt="Sacyr" loading="lazy" />
-        <p class="carrusel-caption">Sacyr</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/construmega.webp" alt="Construmega" loading="lazy" />
-        <p class="carrusel-caption">Construmega</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/dina.webp" alt="DINA Camiones" loading="lazy" />
-        <p class="carrusel-caption">DINA Camiones</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/theGreenbrierCompanies.webp" alt="The Greenbrier Companies" loading="lazy" />
-        <p class="carrusel-caption">The Greenbrier Companies</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/grupoModelo.webp" alt="Grupo Modelo" loading="lazy" />
-        <p class="carrusel-caption">Grupo Modelo</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/avigrupo.webp" alt="Avigrupo" loading="lazy" />
-        <p class="carrusel-caption">Avigrupo</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/coppel.webp" alt="Coppel" loading="lazy" />
-        <p class="carrusel-caption">Coppel</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/bodegaAurrera.webp" alt="Bodega Aurrera" loading="lazy" />
-        <p class="carrusel-caption">Bodega Aurrera</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/elektra.webp" alt="Elektra" loading="lazy" />
-        <p class="carrusel-caption">Elektra</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/oxxo.webp" alt="OXXO" loading="lazy" />
-        <p class="carrusel-caption">OXXO</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/farmaciasDelAhorro.webp" alt="Farmacias del Ahorro" loading="lazy" />
-        <p class="carrusel-caption">Farmacias del Ahorro</p>
-      </div>
-      <div class="carrusel-slide">
-        <img src="img/marcas/maqzar.webp" alt="MAQZAR Constructora" loading="lazy" />
-        <p class="carrusel-caption">MAQZAR Constructora</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- footer section  -->
-  <footer class="mil-relative">
-    <img src="img/photo/footer1.0.png" loading="lazy" class="mil-bg-img mil-parallax" alt="image"
-      style="object-position: top" data-value-1="-25%" data-value-2="23%" />
-
-    <div class="mil-overlay"></div>
-    <div class="container mil-p-120-90">
-      <div class="mil-background-grid"></div>
-
-      <div class="row align-items-end">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
-              <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Tulancingo</span>
-              <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color">
-                <p class="w-color">
-                  Libramiento la joya 200 El cerezo, Tulancingo Hidalgo C.P
-                  4366
-                </p>
-                <p class="w-color">(775) 75 3 38 11</p>
-                <p class="w-color">(775) 11 2 01 60</p>
-                <p class="w-color">(775) 75 3 40 46</p>
-                <p class="w-color">(775) 114 86 06</p>
-
-                <strong class="w-color mil-mb-5">Horarios</strong>
-                <ul class="w-color">
-                  <li>Lunes-Viernes: 8:30 a 5:30</li>
-                  <li>Sabado: 8:30 a 2:00</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
-              <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Pachuca</span>
-              <div class="mil-text-sm mil-up mil-light-soft mil-mb-30">
-                <p class="w-color">
-                  Boulevard Las Torres S/N, Mineral de la Reforma, Hidalgo,
-                  Mexico 75169
-                </p>
-                <p class="w-color">(775) 75 3 38 11</p>
-                <p class="w-color">(775) 11 2 01 60</p>
-                <p class="w-color">(775) 75 3 40 46</p>
-                <p class="w-color">(775) 114 86 06</p>
-
-                <strong class="w-color mil-mb-5">Horarios</strong>
-                <ul class="w-color">
-                  <li>Lunes-Viernes: 8:30 a 5:30</li>
-                  <li>Sabado: 8:30 a 2:00</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
-              <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Huauchinango Puebla</span>
-              <div class="mil-text-sm mil-up mil-light-soft mil-mb-30">
-                <p class="w-color">
-                  Cuacuila - Xaltepec, <br />
-                  73173 Huauchinango, <br />
-                  Puebla
-                </p>
-                <p class="w-color">(775) 75 3 38 11</p>
-                <p class="w-color">(775) 11 2 01 60</p>
-                <p class="w-color">(775) 75 3 40 46</p>
-                <p class="w-color">(775) 114 86 06</p>
-                <strong class="w-color mil-mb-5">Horarios</strong>
-                <ul class="w-color">
-                  <li>Lunes-Viernes: 8:30 a 5:30</li>
-                  <li>Sabado: 8:30 a 2:00</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
-              <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Redes Sociales</span>
-              <br />
-              <a href="https://www.instagram.com/caycoconcretos/">
-                <i class="fab fa-instagram fa-2x text-white"></i>
-              </a>
-              <a href="https://www.facebook.com/CaycoConcretos">
-                <i class="fab fa-facebook-f fa-2x text-white"></i>
-              </a>
-              <a href="https://www.linkedin.com/company/cayco-construction/posts/?feedView=all">
-                <i class="fab fa-linkedin-in fa-2x text-white"></i>
-              </a>
-              <a href="https://www.youtube.com/@caycoconcretos8340">
-                <i class="fab fa-youtube fa-2x text-white"></i>
-              </a>
-              <a href="https://www.tiktok.com/@caycoconcretos_mx">
-                <i class="fab fa-tiktok fa-2x text-white"></i>
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
-              <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Navegación</span>
-              <div class="mil-text-sm mil-up mil-mb-30">
-                <nav class="">
-                  <ul>
-                    <li>
-                      <a class="limpio fontpx" href="about.html">Acerca de</a>
-                    </li>
-                    <li>
-                      <a class="limpio fontpx" href="services.html">Servicios</a>
-                    </li>
-                    <li>
-                      <a class="limpio fontpx" href="proyects.html">Proyectos</a>
-                    </li>
-                    <!-- <li><a class="limpio fontpx" href="">Blog</a></li> -->
-                    <li>
-                      <a class="limpio fontpx" href="contact.html">Contacto</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
-              <a href="index.html" class="mil-footer-logo mil-up mil-mb-30">
-                <img src="img/logo/logoRojo.png" loading="lazy" alt="Logo" style="width: 130px" />
-              </a>
+            <!-- Botones de navegación -->
+            <div class="mil-nav-buttons mil-reviews-nav mil-up">
+              <div class="mil-slider-button mil-process-prev">ANTERIOR</div>
+              <div class="mil-slider-button mil-process-next">SIGUIENTE</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid">
-      <div class="mil-footer-bottom">
-        <p class="mil-light-soft mil-mb-15">
-          ©
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          Cayco. Todos los derechos reservados.
+    </section>
+
+    <!-- Enlazar Font Awesome (si no lo tienes ya en tu proyecto) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <section class="mision-vision-section text-center">
+      <div class="container" style="padding-top: 20px; padding-bottom: 20px">
+        <h2 class="mision-vision-title">Nuestra Filosofía</h2>
+        <p class="mision-vision-text">
+          En CAYCO nos basamos en una misión clara y una visión innovadora para
+          liderar la industria.
         </p>
-        <ul class="mil-light-soft mil-mb-15">
-          <!-- Social links would go here -->
-        </ul>
-        <!-- <ul class="mil-light-soft mil-mb-15">
+
+        <div class="row justify-content-center">
+          <!-- Misión -->
+          <div class="col-md-5 d-flex justify-content-end">
+            <div class="mision-vision-card">
+              <div class="mision-vision-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3 class="mision-vision-title">Misión</h3>
+              <p class="mision-vision-text">
+                En CAYCO nos apasiona ser el aliado estrategico de nuestros
+                clientes, en la construccion de proyectos solidos y
+                sustentables, produciendo concreto de las mas alta calidad,
+                fomentando un entorno de desarrollo y crecimiento para el exito
+                compartido, otorgando al cliente confiabilidad y una experiencia
+                inolvidable.
+              </p>
+            </div>
+          </div>
+
+          <!-- Visión -->
+          <div class="col-md-5 d-flex justify-content-start">
+            <div class="mision-vision-card">
+              <div class="mision-vision-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3 class="mision-vision-title">Visión</h3>
+              <p class="mision-vision-text">
+                Convertirnos en un referente nacional en la industria del
+                concreto, partirndo de la calidad e innovacion tecnologia y
+                sustebtable, destacando la eficiencia tecnica y operativa de
+                nuestros procesos, promoviendo un comportamiento de calidez
+                humano conquistando la lealtad de nuestro cliente interno y
+                consolide la preferencia de compra del cliente externo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mil-section text-center">
+      <div class="container" style="padding: 10px 0">
+        <h2 class="mil-section-title">Nuestros Valores</h2>
+        <p class="mil-section-text">
+          Nos basamos en principios fundamentales que nos guían en cada paso.
+        </p>
+
+        <div class="row">
+          <div class="col-md-3 d-flex">
+            <div class="card-value">
+              <div class="icon-container">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="mil-section-title">INTEGRIDAD</h3>
+              <p class="mil-section-text">
+                Valoramos la preferencia de nuestros clientes y de nuestro
+                personal. Estamos comprometidos en cumplir con nuestras acciones
+                de manera puntual, transparente y coherente. Sin miedo a
+                reconocer nuestras fallas y aprender de ellas. Nos comunicamos
+                siempre abiertamente con todos quienes nos rodean.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex">
+            <div class="card-value">
+              <div class="icon-container">
+                <i class="fas fa-fire"></i>
+              </div>
+              <h3 class="mil-section-title">PASIÓN</h3>
+              <p class="mil-section-text">
+                Nuestra fuerza interna es la satisfacción total de nuestros
+                clientes (internos y externos), buscamos poner a prueba nuestros
+                límites con nuevos retos para el logro de la excelencia.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex">
+            <div class="card-value">
+              <div class="icon-container">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="mil-section-title">PROGRESO</h3>
+              <p class="mil-section-text">
+                Mantenemos un enfoque en la resolución y prevención de problemas
+                y no en conflictos. Generamos esfuerzos en conjunto para el
+                desarrollo de nuevas ideas, métodos y sistemas de trabajo,
+                buscando mejorar día a día nuestras acciones con el medio
+                completo que nos rodea (prójimo, actividades, medio ambiente,
+                etc.).
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex">
+            <div class="card-value">
+              <div class="icon-container">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h3 class="mil-section-title">EMPATÍA</h3>
+              <p class="mil-section-text">
+                Entendemos, comprendemos y respetamos las diferentes formas de
+                pensar, actuar y sentir de nuestro personal y clientes,
+                manteniendo un ambiente cordial y franco que nos permite
+                desempeñarnos mejor y resolver con mayor claridad los retos que
+                se nos presentan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- seccion 3 imagenes -->
+    <section class="three-images-section">
+      <div class="container">
+        <h2 class="section-title">
+          Somos miembros orgullosos de las siguientes asociaciones
+        </h2>
+        <div class="row">
+          <!-- Imagen 1 -->
+          <div class="col-md-4 text-center">
+            <img
+              src="img/marcas/canacintra.webp"
+              alt="CANACINTRA"
+              class="team-image"
+            />
+            <p class="image-caption">CANACINTRA</p>
+          </div>
+          <!-- Imagen 2 -->
+          <div class="col-md-4 text-center">
+            <img src="img/marcas/amci.webp" alt="AMCI" class="team-image" />
+            <p class="image-caption">AMCI</p>
+          </div>
+          <!-- Imagen 3 -->
+          <div class="col-md-4 text-center">
+            <img src="img/marcas/imcyc.webp" alt="IMCYC" class="team-image" />
+            <p class="image-caption">IMCYC</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Título del carrusel -->
+    <h2 class="mil-upper mil-up textCenter">Nuestros Clientes</h2>
+    <!-- Botón para alternar entre carrusel y lista -->
+    <div class="toggle-view">
+      <button id="toggleViewButton">Cambiar a Lista</button>
+    </div>
+    <!-- Carrusel -->
+    <section class="carrusel-infinito">
+      <div class="carrusel-track" id="carruselTrack">
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/gobiernoHidalgo.webp"
+            alt="Gobierno Hidalgo"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Gobierno Hidalgo</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/uaeh.webp"
+            alt="Universidad Autónoma del Estado de Hidalgo"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">
+            Universidad Autónoma del Estado de Hidalgo
+          </p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/utp.webp"
+            alt="Universidad Politécnica de Tulancingo"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Universidad Politécnica de Tulancingo</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/utec.webp"
+            alt="Universidad Tecnológica de Tulancingo"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Universidad Tecnológica de Tulancingo</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/colegioPedroDeGante.webp"
+            alt="Colegio Pedro de Gante"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Colegio Pedro de Gante</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/colegioAntaresTulancingo.webp"
+            alt="Colegio Antares Tulancingo"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Colegio Antares Tulancingo</p>
+        </div>
+        <div class="carrusel-slide">
+          <img src="img/marcas/sacyr.webp" alt="Sacyr" loading="lazy" />
+          <p class="carrusel-caption">Sacyr</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/construmega.webp"
+            alt="Construmega"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Construmega</p>
+        </div>
+        <div class="carrusel-slide">
+          <img src="img/marcas/dina.webp" alt="DINA Camiones" loading="lazy" />
+          <p class="carrusel-caption">DINA Camiones</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/theGreenbrierCompanies.webp"
+            alt="The Greenbrier Companies"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">The Greenbrier Companies</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/grupoModelo.webp"
+            alt="Grupo Modelo"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Grupo Modelo</p>
+        </div>
+        <div class="carrusel-slide">
+          <img src="img/marcas/avigrupo.webp" alt="Avigrupo" loading="lazy" />
+          <p class="carrusel-caption">Avigrupo</p>
+        </div>
+        <div class="carrusel-slide">
+          <img src="img/marcas/coppel.webp" alt="Coppel" loading="lazy" />
+          <p class="carrusel-caption">Coppel</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/bodegaAurrera.webp"
+            alt="Bodega Aurrera"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Bodega Aurrera</p>
+        </div>
+        <div class="carrusel-slide">
+          <img src="img/marcas/elektra.webp" alt="Elektra" loading="lazy" />
+          <p class="carrusel-caption">Elektra</p>
+        </div>
+        <div class="carrusel-slide">
+          <img src="img/marcas/oxxo.webp" alt="OXXO" loading="lazy" />
+          <p class="carrusel-caption">OXXO</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/farmaciasDelAhorro.webp"
+            alt="Farmacias del Ahorro"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">Farmacias del Ahorro</p>
+        </div>
+        <div class="carrusel-slide">
+          <img
+            src="img/marcas/maqzar.webp"
+            alt="MAQZAR Constructora"
+            loading="lazy"
+          />
+          <p class="carrusel-caption">MAQZAR Constructora</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section  -->
+    <footer class="mil-relative">
+      <img
+        src="img/photo/footer1.0.png"
+        loading="lazy"
+        class="mil-bg-img mil-parallax"
+        alt="image"
+        style="object-position: top"
+        data-value-1="-25%"
+        data-value-2="23%"
+      />
+
+      <div class="mil-overlay"></div>
+      <div class="container mil-p-120-90">
+        <div class="mil-background-grid"></div>
+
+        <div class="row align-items-end">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
+                <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"
+                  >Tulancingo</span
+                >
+                <div
+                  class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"
+                >
+                  <p class="w-color">
+                    Libramiento la joya 200 El cerezo, Tulancingo Hidalgo C.P
+                    4366
+                  </p>
+                  <p class="w-color">(775) 75 3 38 11</p>
+                  <p class="w-color">(775) 11 2 01 60</p>
+                  <p class="w-color">(775) 75 3 40 46</p>
+                  <p class="w-color">(775) 114 86 06</p>
+
+                  <strong class="w-color mil-mb-5">Horarios</strong>
+                  <ul class="w-color">
+                    <li>Lunes-Viernes: 8:30 a 5:30</li>
+                    <li>Sabado: 8:30 a 2:00</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
+                <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"
+                  >Pachuca</span
+                >
+                <div class="mil-text-sm mil-up mil-light-soft mil-mb-30">
+                  <p class="w-color">
+                    Boulevard Las Torres S/N, Mineral de la Reforma, Hidalgo,
+                    Mexico 75169
+                  </p>
+                  <p class="w-color">(775) 75 3 38 11</p>
+                  <p class="w-color">(775) 11 2 01 60</p>
+                  <p class="w-color">(775) 75 3 40 46</p>
+                  <p class="w-color">(775) 114 86 06</p>
+
+                  <strong class="w-color mil-mb-5">Horarios</strong>
+                  <ul class="w-color">
+                    <li>Lunes-Viernes: 8:30 a 5:30</li>
+                    <li>Sabado: 8:30 a 2:00</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
+                <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"
+                  >Huauchinango Puebla</span
+                >
+                <div class="mil-text-sm mil-up mil-light-soft mil-mb-30">
+                  <p class="w-color">
+                    Cuacuila - Xaltepec, <br />
+                    73173 Huauchinango, <br />
+                    Puebla
+                  </p>
+                  <p class="w-color">(775) 75 3 38 11</p>
+                  <p class="w-color">(775) 11 2 01 60</p>
+                  <p class="w-color">(775) 75 3 40 46</p>
+                  <p class="w-color">(775) 114 86 06</p>
+                  <strong class="w-color mil-mb-5">Horarios</strong>
+                  <ul class="w-color">
+                    <li>Lunes-Viernes: 8:30 a 5:30</li>
+                    <li>Sabado: 8:30 a 2:00</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
+                <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"
+                  >Redes Sociales</span
+                >
+                <br />
+                <a href="https://www.facebook.com/CaycoConcretos">
+                  <i class="fab fa-facebook-f fa-2x text-white textBigger3"></i>
+                </a>
+                <a href="https://www.instagram.com/caycoconcretos/">
+                  <i class="fab fa-instagram fa-2x text-white textBigger3"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/cayco-construction/posts/?feedView=all"
+                >
+                  <i
+                    class="fab fa-linkedin-in fa-2x text-white textBigger3"
+                  ></i>
+                </a>
+                <a href="https://www.youtube.com/@caycoconcretos8340">
+                  <i class="fab fa-youtube fa-2x text-white textBigger3"></i>
+                </a>
+                <a href="https://www.tiktok.com/@caycoconcretos_mx">
+                  <i class="fab fa-tiktok fa-2x text-white textBigger3"></i>
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
+                <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"
+                  >Navegación</span
+                >
+                <div class="mil-text-sm mil-up mil-mb-30">
+                  <nav class="">
+                    <ul>
+                      <li>
+                        <a class="limpio fontpx" href="about.html">Acerca de</a>
+                      </li>
+                      <li>
+                        <a class="limpio fontpx" href="services.html"
+                          >Servicios</a
+                        >
+                      </li>
+                      <li>
+                        <a class="limpio fontpx" href="proyects.html"
+                          >Proyectos</a
+                        >
+                      </li>
+                      <!-- <li><a class="limpio fontpx" href="">Blog</a></li> -->
+                      <li>
+                        <a class="limpio fontpx" href="contact.html"
+                          >Contacto</a
+                        >
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
+                <a href="index.html" class="mil-footer-logo mil-up mil-mb-30">
+                  <img
+                    src="img/logo/nuevo/cayco.webp"
+                    loading="lazy"
+                    alt="Logo"
+                    style="width: 130px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="mil-footer-bottom">
+          <p class="mil-light-soft mil-mb-15">
+            ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Cayco. Todos los derechos reservados.
+          </p>
+          <ul class="mil-light-soft mil-mb-15">
+            <!-- Social links would go here -->
+          </ul>
+          <!-- <ul class="mil-light-soft mil-mb-15">
                     <li><a href="">Our App</a></li>
                     <li><a href="">Sitemap</a></li>
                 </ul> -->
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <a href="https://wa.me/527751340586?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios"
-    class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+    <a
+      href="https://wa.me/527751340586?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
-  <script src="app.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper(".mil-reviews-slider", {
-      slidesPerView: 1, // Solo un testimonio visible
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".mil-process-next", // Botón "Siguiente"
-        prevEl: ".mil-process-prev", // Botón "Previo"
-      },
-      loop: true, // Hacer que los testimonios se repitan en bucle
-      effect: "slide", // El efecto de transición puede ser 'fade' o 'slide'
-    });
-  </script>
-</body>
-
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mil-reviews-slider", {
+        slidesPerView: 1, // Solo un testimonio visible
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".mil-process-next", // Botón "Siguiente"
+          prevEl: ".mil-process-prev", // Botón "Previo"
+        },
+        loop: true, // Hacer que los testimonios se repitan en bucle
+        effect: "slide", // El efecto de transición puede ser 'fade' o 'slide'
+      });
+    </script>
+  </body>
 </html>
