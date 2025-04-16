@@ -3432,8 +3432,8 @@ iframe {
 .carrusel-slide {
   flex: 0 0 calc((100% - 60px) / 3);
   /* (100% - (2 * gap)) / 3 logos */
-  max-width: 500px;
-  min-width: 300px;
+  max-width: 200px;
+  min-width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3443,8 +3443,8 @@ iframe {
 
 .carrusel-slide img {
   width: auto;
-  height: 250px;
-  max-width: 400px;
+  height: 100px;
+  max-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3461,7 +3461,7 @@ iframe {
 
   .carrusel-slide img {
     width: auto;
-    max-width: 250px;
+    max-width: 200px;
     height: 150px;
   }
 }
@@ -3550,7 +3550,7 @@ iframe {
 /* Título del carrusel */
 .carrusel-title {
   text-align: center;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
@@ -3558,7 +3558,7 @@ iframe {
 
 @media screen and (max-width: 768px) {
   .carrusel-title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -3567,6 +3567,78 @@ iframe {
   text-align: center;
   font-size: 1.5rem;
   font-weight: normal;
-  margin-top: 10px;
+  margin: 10px;
   color: #555;
+}
+
+/* 
+Sección de tres imágenes
+---------------------------------------
+---------------------------------------
+---------------------------------------
+*/
+.three-images-section {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.three-images-section .container {
+  margin: 0 100%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* Centra las imágenes horizontalmente */
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten en pantallas pequeñas */
+}
+
+.team-image {
+  width: auto;
+  height: auto;
+  max-height: 250px;
+  margin-bottom: 10px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-caption {
+  font-size: 1rem;
+  color: #555;
+  text-align: center; /* Centra el texto debajo de la imagen */
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  .row {
+    justify-content: center; /* Centra las imágenes en pantallas pequeñas */
+  }
+
+  .team-image {
+    max-height: 200px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .row {
+    justify-content: center; /* Centra las imágenes en pantallas muy pequeñas */
+  }
+
+  .team-image {
+    max-height: 150px;
+  }
 }
