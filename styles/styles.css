@@ -662,8 +662,8 @@ icons
 } */
 
 .mil-icon.mil-icon-lg {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 
 .mil-icon.mil-icon-xl {
@@ -3670,10 +3670,6 @@ Correcciones
 ---------------------------------------
 ---------------------------------------
  */
-.mil-icon.mil-icon-lg {
-  width: 100px !important;
-  height: 100px !important;
-}
 
 .mil-icon-circle {
   font-size: 50px;
