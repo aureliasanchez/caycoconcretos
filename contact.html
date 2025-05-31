@@ -403,7 +403,7 @@
 
                 <div class="col-lg-7">
                     <!-- {/* contact form */} -->
-                    <form id="FormContact" class="mil-mb-90 cform" action="https://script.google.com/macros/s/AKfycbxz0OCuWP7gyH1Oa2Q8rJylAA-RUGBfJGZ1fTjPi-SrHbEaMgfNyxUofJjarx98l5cPRQ/exec" method="POST">
+                    <form id="FormContact" class="mil-mb-90 cform" action="https://script.google.com/macros/s/AKfycbxHza90iLvElT73oG7zpYigtJo-JdmRUxEkNjJOfoloCreO0tJSLRx5auRssnaPOkfd/exec" method="POST">
                         <div class="row">
                             <!-- Nombre Completo -->
                             <div class="col-lg-6">
@@ -462,6 +462,20 @@
                                 <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                     <label class="mil-upper"><span>Volumen Requerido (m³)</span><span class="mil-required">*</span></label>
                                     <input type="number" placeholder="Pon el volumen en m³" name="Volumen" required />
+                                </div>
+                            </div>
+                            <!-- Número de Teléfono -->
+                            <div class="col-lg-6">
+                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
+                                    <label class="mil-upper"><span>Número de Teléfono</span><span class="mil-required">*</span></label>
+                                    <input type="tel" placeholder="Pon tu número de teléfono" name="telefono" required />
+                                </div>
+                            </div>
+                            <!-- Correo Electrónico -->
+                            <div class="col-lg-6">
+                                <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
+                                    <label class="mil-upper"><span>Correo Electrónico</span><span class="mil-required">*</span></label>
+                                    <input type="email" placeholder="Pon tu correo electrónico" name="correo" required />
                                 </div>
                             </div>
                             <!-- Botón de Enviar -->
@@ -616,7 +630,7 @@
 <script src="app.js"></script>
 
 
-<a href="https://wa.me/527751340586?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/527711436326?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -627,11 +641,16 @@
         // Obtén los datos del formulario
         const form = event.target;
         const formData = new FormData(form);
+        // 👇 LOG DE DATOS EN EL FRONT
+console.log("Datos del Formulario:");
+for (let [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
 
         // Envía los datos al Web App usando fetch
         fetch(form.action, {
-            method: "POST",
-            body: formData,
+        method: "POST",
+        body: formData
         })
         .then((response) => response.text())
         .then((text) => {
