@@ -116,6 +116,28 @@
   <priority>0.8</priority>
 </url>
 
+<!-- Guías y Contenido -->
+<url>
+  <loc>https://cayco.mx/faq.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://cayco.mx/guia-tipos-concreto.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://cayco.mx/guia-seleccion-concreto.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
 <!-- Blog -->
 <url>
   <loc>https://cayco.mx/blog/</loc>
