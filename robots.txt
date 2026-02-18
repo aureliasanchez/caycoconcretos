@@ -1,0 +1,56 @@
+# Robots.txt - CAYCO Concretos Premezclados
+# Optimizado para Google + LLM Crawlers
+# Fecha: 12 Enero 2026
+
+User-agent: *
+Allow: /
+
+# Paginas principales
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /service-1.html
+Allow: /service-2.html
+Allow: /service-3.html
+Allow: /service-4.html
+Allow: /proyects.html
+Allow: /galeria.html
+Allow: /contact.html
+
+# Recursos estaticos
+Allow: /img/
+Allow: /styles/styles.css
+Allow: /styles/styles2.css
+
+# Bloquear archivos innecesarios
+Disallow: /styles/scss/
+Disallow: /styles/css/plugins/
+Disallow: /*.map$
+
+# LLM Crawlers - PERMITIR ACCESO COMPLETO
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://cayco.mx/sitemap.xml
+
+# Crawl-delay (opcional)
+Crawl-delay: 1
