@@ -1,26 +1,9 @@
 # Robots.txt - CAYCO Concretos Premezclados
-# Optimizado para Google + LLM Crawlers
-# Fecha: 12 Enero 2026
+# Dominio canonico: https://cayco.mx
+# Fecha: 18 Febrero 2026
 
 User-agent: *
 Allow: /
-
-# Paginas principales
-Allow: /index.html
-Allow: /about.html
-Allow: /services.html
-Allow: /service-1.html
-Allow: /service-2.html
-Allow: /service-3.html
-Allow: /service-4.html
-Allow: /proyects.html
-Allow: /galeria.html
-Allow: /contact.html
-
-# Recursos estaticos
-Allow: /img/
-Allow: /styles/styles.css
-Allow: /styles/styles2.css
 
 # Bloquear archivos innecesarios
 Disallow: /styles/scss/
@@ -51,6 +34,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://cayco.mx/sitemap.xml
-
-# Crawl-delay (opcional)
-Crawl-delay: 1

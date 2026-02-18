@@ -1,0 +1,19 @@
+# .htaccess - CAYCO Concretos
+# Redirecciones 301 para consolidar dominio canonico: https://cayco.mx
+# Fecha: 18 Febrero 2026
+
+RewriteEngine On
+
+# 1. Redirigir www a non-www (301)
+RewriteCond %{HTTP_HOST} ^www\.cayco\.mx$ [NC]
+RewriteRule ^(.*)$ https://cayco.mx/$1 [R=301,L]
+
+# 2. Redirigir HTTP a HTTPS (301)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://cayco.mx/$1 [R=301,L]
+
+# Seguridad: bloquear acceso a archivos sensibles
+<FilesMatch "\.(env|git|htpasswd|log)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
