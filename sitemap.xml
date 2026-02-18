@@ -80,6 +80,42 @@
   <priority>0.7</priority>
 </url>
 
+<!-- Ubicaciones - Landing pages locales -->
+<url>
+  <loc>https://cayco.mx/ubicacion-tulancingo.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://cayco.mx/ubicacion-pachuca.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://cayco.mx/ubicacion-huauchinango.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://cayco.mx/ubicacion-queretaro.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://cayco.mx/ubicacion-zumpango.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
 <!-- Blog -->
 <url>
   <loc>https://cayco.mx/blog/</loc>
