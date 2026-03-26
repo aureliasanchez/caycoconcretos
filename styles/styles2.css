@@ -777,8 +777,12 @@ button
 .mil-button.mil-sm {
     padding: 0 40px;
     height: 60px;
-    border-radius: 20px;
+    border-radius: 6px;
     color: white;
+}
+
+.mil-button.mil-header-cta {
+    background-color: #D60E1F;
 }
 
 .mil-button:hover {
