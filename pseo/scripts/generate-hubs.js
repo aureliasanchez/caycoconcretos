@@ -114,6 +114,7 @@ function head(title, desc, slug, suc) {
                     <li class="mil-light"><a href="/proyects.html">Proyectos</a></li>
                     <li class="mil-light"><a href="/galeria.html">Galeria</a></li>
                     <li class="mil-light"><a href="/about.html">Acerca de</a></li>
+                    <li class="mil-light"><a href="/mercado-concreto/">Mercado</a></li>
                     <li class="mil-light"><a href="https://cayco.mx/blog/">Blog</a></li>
                 </ul></nav></div>
                 <div class="mil-top-panel-buttons">
