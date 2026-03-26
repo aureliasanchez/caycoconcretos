@@ -554,7 +554,6 @@ ${['concreto-fc-200-queretaro','concreto-fc-250-queretaro','concreto-fc-300-quer
             <div class="row align-items-end"><div class="col-lg-12"><div class="row">
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/tulancingo/" class="limpio">Tulancingo</a></span>
-                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color"><a href="https://maps.google.com/?cid=12468189399507520405" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none">Libramiento la joya 200, Tulancingo Hgo. 43660 <i class="fas fa-external-link-alt" style="font-size:10px;margin-left:4px;opacity:.5"></i></a></p><p class="w-color"><a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>(771) 143 63 26</a></p></div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/pachuca/" class="limpio">Pachuca</a></span>
@@ -562,7 +561,6 @@ ${['concreto-fc-200-queretaro','concreto-fc-250-queretaro','concreto-fc-300-quer
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/huauchinango/" class="limpio">Huauchinango</a></span>
-                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Cuacuila-Xaltepec, 73173 Huauchinango, Puebla <i class="fas fa-external-link-alt" style="font-size:10px;margin-left:4px;opacity:.5"></i></a></p><p class="w-color"><a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>(771) 143 63 26</a></p></div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/queretaro/" class="limpio">Querétaro</a></span>

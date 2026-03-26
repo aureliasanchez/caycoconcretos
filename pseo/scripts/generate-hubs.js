@@ -163,7 +163,6 @@ function footer(suc) {
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="https://maps.google.com/?cid=5458889427966911554" target="_blank" class="limpio">Huauchinango</a></span>
-                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Cuacuila-Xaltepec, 73173 Huauchinango, Puebla <i class="fas fa-external-link-alt" style="font-size:10px;margin-left:4px;opacity:.5"></i></a></p><p class="w-color"><a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>(771) 143 63 26</a></p><strong class="w-color mil-mb-5">Horarios</strong><ul class="w-color"><li>L-V: 8:30 a 5:30</li><li>Sab: 8:30 a 2:00</li></ul></div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="https://www.google.com/maps/search/CAYCO+Concretos+Quer%C3%A9taro" target="_blank" class="limpio">Querétaro</a></span>
