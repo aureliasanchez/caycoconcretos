@@ -377,6 +377,53 @@
     </section>
     <!-- banner end -->
 
+    <!-- Nuestros Clientes — Swiper Carousel -->
+    <section style="padding:40px 0;background:#f2f2f2">
+      <div class="container">
+        <p class="textCenter" style="font-size:12px;text-transform:uppercase;letter-spacing:2px;color:rgba(0,0,0,.4);margin-bottom:20px;font-weight:600">Empresas que confían en CAYCO</p>
+        <div class="swiper" id="clientesSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/gobiernoHidalgo.webp" alt="Gobierno Hidalgo" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/uaeh.webp" alt="UAEH" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/utp.webp" alt="UPT" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/utec.webp" alt="UTEC" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/colegioPedroDeGante.webp" alt="Colegio Pedro de Gante" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/colegioAntaresTulancingo.webp" alt="Colegio Antares" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/sacyr.webp" alt="Sacyr" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/construmega.webp" alt="Construmega" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/dina.webp" alt="DINA Camiones" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/theGreenbrierCompanies.webp" alt="The Greenbrier Companies" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/grupoModelo.webp" alt="Grupo Modelo" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/avigrupo.webp" alt="Avigrupo" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/coppel.webp" alt="Coppel" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/bodegaAurrera.webp" alt="Bodega Aurrera" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/elektra.webp" alt="Elektra" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/oxxo.webp" alt="OXXO" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/farmaciasDelAhorro.webp" alt="Farmacias del Ahorro" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+            <div class="swiper-slide" style="display:flex;align-items:center;justify-content:center;height:80px"><img src="img/marcas/maqzar.webp" alt="MAQZAR Constructora" loading="lazy" style="max-height:50px;max-width:110px;object-fit:contain" /></div>
+          </div>
+          <div class="swiper-pagination" style="position:relative;margin-top:15px"></div>
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    new Swiper('#clientesSwiper', {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: { delay: 3500, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: {
+        576: { slidesPerView: 4 },
+        768: { slidesPerView: 5 },
+        992: { slidesPerView: 6, spaceBetween: 15 },
+        1200: { slidesPerView: 7, spaceBetween: 15 }
+      }
+    });
+    </script>
+
     <!-- company two slider -->
     <section class="">
       <br />
@@ -747,198 +794,20 @@
       </div>
     </section>
 
-    <!-- seccion 3 imagenes -->
-    <section class="three-images-section">
+    <!-- Asociaciones -->
+    <section style="padding:60px 0 40px">
       <div class="container">
-        <h2 class="mil-upper mil-up textCenter">
-          Somos miembros orgullosos de las siguientes asociaciones
-        </h2>
-        <div class="row">
-          <!-- Imagen 1 -->
-          <div class="col-md-4 text-center">
-            <img
-              src="img/marcas/canacintra.webp"
-              alt="CANACINTRA"
-              class="team-image"
-              width="200"
-              height="200"
-            />
-            <p class="image-caption">CANACINTRA</p>
-          </div>
-          <!-- Imagen 2 -->
-          <div class="col-md-4 text-center">
-            <img src="img/marcas/amci.webp" alt="AMCI" class="team-image" width="200" height="200" />
-            <p class="image-caption">AMCI</p>
-          </div>
-          <!-- Imagen 3 -->
-          <div class="col-md-4 text-center">
-            <img src="img/marcas/imcyc.webp" alt="IMCYC" class="team-image" width="200" height="200" />
-            <p class="image-caption">IMCYC</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Título del carrusel -->
-    <h2 class="mil-upper mil-up textCenter">Nuestros Clientes</h2>
-    <!-- Botón para alternar entre carrusel y lista -->
-    <div class="toggle-view">
-      <button id="toggleViewButton">Cambiar a Lista</button>
-    </div>
-    <!-- Carrusel -->
-    <section class="carrusel-infinito">
-      <div class="carrusel-track" id="carruselTrack">
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/gobiernoHidalgo.webp"
-            alt="Gobierno Hidalgo"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Gobierno Hidalgo</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/uaeh.webp"
-            alt="Universidad Autónoma del Estado de Hidalgo"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">
-            Universidad Autónoma del Estado de Hidalgo
-          </p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/utp.webp"
-            alt="Universidad Politécnica de Tulancingo"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Universidad Politécnica de Tulancingo</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/utec.webp"
-            alt="Universidad Tecnológica de Tulancingo"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Universidad Tecnológica de Tulancingo</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/colegioPedroDeGante.webp"
-            alt="Colegio Pedro de Gante"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Colegio Pedro de Gante</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/colegioAntaresTulancingo.webp"
-            alt="Colegio Antares Tulancingo"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Colegio Antares Tulancingo</p>
-        </div>
-        <div class="carrusel-slide">
-          <img src="img/marcas/sacyr.webp" alt="Sacyr" loading="lazy" width="200" height="100" />
-          <p class="carrusel-caption">Sacyr</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/construmega.webp"
-            alt="Construmega"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Construmega</p>
-        </div>
-        <div class="carrusel-slide">
-          <img src="img/marcas/dina.webp" alt="DINA Camiones" loading="lazy" width="200" height="100" />
-          <p class="carrusel-caption">DINA Camiones</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/theGreenbrierCompanies.webp"
-            alt="The Greenbrier Companies"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">The Greenbrier Companies</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/grupoModelo.webp"
-            alt="Grupo Modelo"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Grupo Modelo</p>
-        </div>
-        <div class="carrusel-slide">
-          <img src="img/marcas/avigrupo.webp" alt="Avigrupo" loading="lazy" width="200" height="100" />
-          <p class="carrusel-caption">Avigrupo</p>
-        </div>
-        <div class="carrusel-slide">
-          <img src="img/marcas/coppel.webp" alt="Coppel" loading="lazy" width="200" height="100" />
-          <p class="carrusel-caption">Coppel</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/bodegaAurrera.webp"
-            alt="Bodega Aurrera"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Bodega Aurrera</p>
-        </div>
-        <div class="carrusel-slide">
-          <img src="img/marcas/elektra.webp" alt="Elektra" loading="lazy" width="200" height="100" />
-          <p class="carrusel-caption">Elektra</p>
-        </div>
-        <div class="carrusel-slide">
-          <img src="img/marcas/oxxo.webp" alt="OXXO" loading="lazy" width="200" height="100" />
-          <p class="carrusel-caption">OXXO</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/farmaciasDelAhorro.webp"
-            alt="Farmacias del Ahorro"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">Farmacias del Ahorro</p>
-        </div>
-        <div class="carrusel-slide">
-          <img
-            src="img/marcas/maqzar.webp"
-            alt="MAQZAR Constructora"
-            loading="lazy"
-            width="200"
-            height="100"
-          />
-          <p class="carrusel-caption">MAQZAR Constructora</p>
+        <h2 class="mil-upper mil-up textCenter mil-mb-40" style="font-size:22px">Miembros de</h2>
+        <div class="d-flex justify-content-center align-items-center gap-5 flex-wrap">
+          <img src="img/marcas/canacintra.webp" alt="CANACINTRA" loading="lazy" style="height:70px;width:auto;opacity:1;transition:.3s" />
+          <img src="img/marcas/amci.webp" alt="AMCI" loading="lazy" style="height:70px;width:auto;opacity:1;transition:.3s" />
+          <img src="img/marcas/imcyc.webp" alt="IMCYC" loading="lazy" style="height:70px;width:auto;opacity:1;transition:.3s" />
         </div>
       </div>
     </section>
 
     <!-- ═══ VACANTES CAYCO ═══ -->
-    <section id="vacantes" style="padding:80px 0 60px;background:#0a0a0a;">
+    <section id="vacantes" style="padding:80px 0 60px;background:rgba(0,0,0,.9);backdrop-filter:blur(8px);">
       <div class="container">
         <div class="row align-items-end mil-mb-60">
           <div class="col-lg-7">

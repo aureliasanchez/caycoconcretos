@@ -775,13 +775,11 @@ button
 }
 
 .mil-button.mil-sm {
-    padding: 0 40px;
-    height: 60px;
+    padding: 0 25px;
+    height: 40px;
     border-radius: 6px;
     color: white;
-}
-
-.mil-button.mil-header-cta {
+    font-size: 13px;
     background-color: #D60E1F;
 }
 
