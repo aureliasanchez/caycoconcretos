@@ -53,14 +53,14 @@ function head(title, desc, slug, suc) {
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${desc}" />
     <meta property="og:url" content="https://cayco.mx/${slug}/" />
-    <meta property="og:image" content="https://cayco.mx/img/logo/logo.png" />
+    <meta property="og:image" content="https://cayco.mx/img/logo/logoRojo.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="CAYCO Concretos" />
     <meta property="og:locale" content="es_MX" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${desc}" />
-    <meta name="twitter:image" content="https://cayco.mx/img/logo/logo.png" />
+    <meta name="twitter:image" content="https://cayco.mx/img/logo/logoRojo.png" />
     <link rel="icon" href="/img/logo/nuevo/icono.webp" type="image/png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/css/plugins/bootstrap-grid.css">
