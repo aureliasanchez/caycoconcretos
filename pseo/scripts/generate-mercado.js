@@ -267,7 +267,7 @@ const html = `<!DOCTYPE html>
                     <p class="mkt-hero-sub">5 sucursales en 4 estados. 79 páginas especializadas por zona, producto, especificación y tipo de cliente. Datos reales del mercado 2026.</p>
                     <div class="d-flex gap-3 flex-wrap">
                         <a href="/contact.html#contactForm" class="mil-button mil-sm limp"><i class="fas fa-file-alt"></i>&nbsp; Cotizar Proyecto</a>
-                        <a href="tel:+524424397563" class="mil-button mil-sm mil-transparent-button limp" style="border-color:rgba(255,255,255,.3);color:#fff"><i class="fas fa-phone-alt"></i>&nbsp; (442) 439 7563</a>
+                        <a href="tel:+527757534046" class="mil-button mil-sm mil-transparent-button limp" style="border-color:rgba(255,255,255,.3);color:#fff"><i class="fas fa-phone-alt"></i>&nbsp; (775) 753 40 46</a>
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block">
@@ -330,7 +330,7 @@ const html = `<!DOCTYPE html>
                         <div class="mkt-suc-region">San José el Alto, Querétaro</div>
                         <div class="mkt-suc-pages">${qroPages.length}</div>
                         <div class="mkt-suc-label">Páginas especializadas</div>
-                        <div class="mkt-suc-tel"><a href="tel:+524424397563"><i class="fas fa-phone-alt" style="color:var(--accent);margin-right:6px"></i>(442) 439 7563</a></div>
+                        <div class="mkt-suc-tel"><a href="tel:+527757534046"><i class="fas fa-phone-alt" style="color:var(--accent);margin-right:6px"></i>(775) 753 40 46</a></div>
                         <div class="mkt-suc-actions">
                             <a href="/queretaro/">Ver Hub</a>
                             <a href="/nearshoring-queretaro-hub/">Nearshoring</a>
@@ -353,7 +353,7 @@ const html = `<!DOCTYPE html>
                         <div class="mkt-suc-region">Mineral de la Reforma, Hidalgo</div>
                         <div class="mkt-suc-pages">${pacPages.length}</div>
                         <div class="mkt-suc-label">Páginas especializadas</div>
-                        <div class="mkt-suc-tel"><a href="tel:+527711436326"><i class="fas fa-phone-alt" style="color:var(--accent);margin-right:6px"></i>(771) 143 63 26</a></div>
+                        <div class="mkt-suc-tel"><a href="tel:+527757534046"><i class="fas fa-phone-alt" style="color:var(--accent);margin-right:6px"></i>(775) 753 40 46</a></div>
                         <div class="mkt-suc-actions"><a href="/pachuca/">Ver Hub</a></div>
                     </div>
                 </div>
@@ -363,7 +363,7 @@ const html = `<!DOCTYPE html>
                         <div class="mkt-suc-region">Sierra Norte de Puebla</div>
                         <div class="mkt-suc-pages">${huaPages.length}</div>
                         <div class="mkt-suc-label">Páginas especializadas</div>
-                        <div class="mkt-suc-tel"><a href="tel:+527767678335"><i class="fas fa-phone-alt" style="color:var(--accent);margin-right:6px"></i>(776) 767 83 35</a></div>
+                        <div class="mkt-suc-tel"><a href="tel:+527757534046"><i class="fas fa-phone-alt" style="color:var(--accent);margin-right:6px"></i>(775) 753 40 46</a></div>
                         <div class="mkt-suc-actions"><a href="/huauchinango/">Ver Hub</a></div>
                     </div>
                 </div>
@@ -373,7 +373,7 @@ const html = `<!DOCTYPE html>
                         <div class="mkt-suc-region">Estado de México</div>
                         <div class="mkt-suc-pages">${zumPages.length}</div>
                         <div class="mkt-suc-label">Páginas especializadas</div>
-                        <div class="mkt-suc-tel"><a href="tel:+525666722875"><i class="fas fa-phone-alt" style="color:var(--accent);margin-right:6px"></i>(566) 672 2875</a></div>
+                        <div class="mkt-suc-tel"><a href="tel:+527757534046"><i class="fas fa-phone-alt" style="color:var(--accent);margin-right:6px"></i>(775) 753 40 46</a></div>
                         <div class="mkt-suc-actions"><a href="/zumpango/">Ver Hub</a></div>
                     </div>
                 </div>
@@ -537,8 +537,8 @@ ${['concreto-fc-200-queretaro','concreto-fc-250-queretaro','concreto-fc-300-quer
                 <h2>¿Tienes un Proyecto de Construcción?</h2>
                 <p>Cotiza tu concreto premezclado con la calidad y respaldo de CAYCO. 5 sucursales, asesoría técnica incluida y más de 1,250 proyectos realizados.</p>
                 <div class="mkt-cta-btns">
-                    <a href="https://wa.me/524424397563?text=${encodeURIComponent('Hola, me interesa cotizar concreto premezclado')}" class="btn-wa"><i class="fab fa-whatsapp"></i>&nbsp; WhatsApp</a>
-                    <a href="tel:+524424397563" class="btn-tel d-lg-none"><i class="fas fa-phone-alt"></i>&nbsp; (442) 439 7563</a>
+                    <a href="https://wa.me/527711436326?text=${encodeURIComponent('Hola, me interesa cotizar concreto premezclado')}" class="btn-wa"><i class="fab fa-whatsapp"></i>&nbsp; WhatsApp</a>
+                    <a href="tel:+527757534046" class="btn-tel d-lg-none"><i class="fas fa-phone-alt"></i>&nbsp; (775) 753 40 46</a>
                     <a href="/contact.html#contactForm" class="btn-form"><i class="fas fa-file-alt"></i>&nbsp; Formulario</a>
                 </div>
             </div>
@@ -554,23 +554,23 @@ ${['concreto-fc-200-queretaro','concreto-fc-250-queretaro','concreto-fc-300-quer
             <div class="row align-items-end"><div class="col-lg-12"><div class="row">
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/tulancingo/" class="limpio">Tulancingo</a></span>
-                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Libramiento la joya 200, Tulancingo Hgo. 43660</p><p class="w-color">(775) 753 38 11</p></div>
+                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color"><a href="https://maps.google.com/?cid=12468189399507520405" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none">Libramiento la joya 200, Tulancingo Hgo. 43660 <i class="fas fa-external-link-alt" style="font-size:10px;margin-left:4px;opacity:.5"></i></a></p><p class="w-color"><a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>(771) 143 63 26</a></p></div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/pachuca/" class="limpio">Pachuca</a></span>
-                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Blvd. Las Torres S/N, Mineral de la Reforma 75169</p><p class="w-color">(771) 143 63 26</p></div>
+                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Blvd. Las Torres S/N, Mineral de la Reforma 75169</p><p class="w-color"><a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>(771) 143 63 26</a></p></div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/huauchinango/" class="limpio">Huauchinango</a></span>
-                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Cuacuila-Xaltepec, 73173 Huauchinango, Puebla</p><p class="w-color">(776) 767 83 35</p></div>
+                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Cuacuila-Xaltepec, 73173 Huauchinango, Puebla <i class="fas fa-external-link-alt" style="font-size:10px;margin-left:4px;opacity:.5"></i></a></p><p class="w-color"><a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>(771) 143 63 26</a></p></div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/queretaro/" class="limpio">Querétaro</a></span>
-                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">L. D. Colosio 257-274, San José el Alto, Qro. 76147</p><p class="w-color">(442) 439 7563</p></div>
+                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">L. D. Colosio 257-274, San José el Alto, Qro. 76147</p><p class="w-color"><a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>(771) 143 63 26</a></p></div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30"><a href="/zumpango/" class="limpio">Zumpango</a></span>
-                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Ex-Hacienda Guadalupe, 55630 Zumpango, Méx</p><p class="w-color">(566) 672 2875</p></div>
+                    <div class="mil-text-sm mil-up mil-light-soft mil-mb-30 w-color"><p class="w-color">Ex-Hacienda Guadalupe, 55630 Zumpango, Méx</p><p class="w-color"><a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>(771) 143 63 26</a></p></div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2 text-justify">
                     <span class="mil-suptitle mil-light mil-upper mil-up mil-mb-30">Navegación</span>
@@ -589,7 +589,7 @@ ${['concreto-fc-200-queretaro','concreto-fc-250-queretaro','concreto-fc-300-quer
         <div class="container-fluid"><div class="mil-footer-bottom"><p class="mil-light-soft mil-mb-15">&copy; 2026 Cayco. Todos los derechos reservados.</p></div></div>
     </footer>
 
-    <a href="https://wa.me/524424397563?text=${encodeURIComponent('Hola, me interesa cotizar concreto premezclado')}" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/527711436326?text=${encodeURIComponent('Hola, me interesa cotizar concreto premezclado')}" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <script src="/app.js"></script>
 
     <!-- Nav pills active state -->
