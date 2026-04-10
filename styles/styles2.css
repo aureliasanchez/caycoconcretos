@@ -774,8 +774,29 @@ button
     width: 100%;
 }
 
+/* Nav: reducir espaciado, alinear izquierda, fix Blog */
+.mil-navigation nav ul li {
+    margin-right: 10px;
+}
+.mil-navigation nav ul li a {
+    padding: 0 6px;
+    color: rgba(255, 255, 255, 1) !important;
+}
+.mil-navigation nav ul li a:visited {
+    color: rgba(255, 255, 255, 1) !important;
+}
+.mil-navigation nav ul li a:hover {
+    color: #d32f2f !important;
+}
+.mil-top-panel-content .mil-navigation {
+    margin-left: auto;
+}
+.mil-top-panel-content .mil-top-panel-buttons {
+    margin-left: 10px;
+}
+
 .mil-button.mil-sm {
-    padding: 0 25px;
+    padding: 0 16px;
     height: 40px;
     border-radius: 6px;
     color: white;
