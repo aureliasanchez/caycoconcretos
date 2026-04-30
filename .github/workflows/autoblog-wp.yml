@@ -1,0 +1,105 @@
+name: Autoblog WP Cayco
+
+# Genera posts vía REST API de WordPress (sin FTP, sin commit del HTML).
+# Cron cada 3 días a las 14:00 UTC (~8:00 AM hora centro de México).
+
+on:
+  schedule:
+    - cron: '0 14 */3 * *'
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Cuántos artículos generar'
+        required: false
+        default: '1'
+        type: string
+      cluster:
+        description: 'Filtrar por cluster (opcional): tecnico-normativo | innovacion | geo-zonas | tipos-proyecto | casos-cliente | comparativas-decision'
+        required: false
+        default: ''
+        type: string
+      status:
+        description: 'Estado del post en WordPress'
+        required: false
+        default: 'draft'
+        type: choice
+        options:
+          - draft
+          - publish
+      dry_run:
+        description: 'Dry run (no llama API ni publica; escribe preview JSON en logs/)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autoblog-wp
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: autoblog-wp
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Generate post(s) and publish to WordPress
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          WP_URL: ${{ secrets.WP_URL }}
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          COUNT="${{ github.event.inputs.count || '1' }}"
+          CLUSTER="${{ github.event.inputs.cluster }}"
+          STATUS="${{ github.event.inputs.status || 'draft' }}"
+          DRY="${{ github.event.inputs.dry_run }}"
+          ARGS="--count $COUNT --status $STATUS"
+          if [ -n "$CLUSTER" ]; then ARGS="$ARGS --cluster $CLUSTER"; fi
+          if [ "$DRY" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          echo "Ejecutando: node scripts/generate-blog.js $ARGS"
+          node scripts/generate-blog.js $ARGS
+
+      - name: Commit caché de slugs publicados (resiliencia)
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          cd ..
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -f autoblog-wp/logs/published-slugs.json ]; then
+            # Sólo commit del cache de slugs (no del log con tokens/costos)
+            mkdir -p autoblog-wp/cache
+            cp autoblog-wp/logs/published-slugs.json autoblog-wp/cache/published-slugs.json
+            git add autoblog-wp/cache/published-slugs.json || true
+            if ! git diff --staged --quiet; then
+              git commit -m "autoblog-wp: actualizar caché de slugs publicados [skip ci]"
+              git push
+              echo "✅ Caché actualizado."
+            else
+              echo "Sin cambios en caché."
+            fi
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Autoblog WP run summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Status del post: ${{ github.event.inputs.status || 'draft' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Cluster filtro: ${{ github.event.inputs.cluster || '(ninguno)' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Dry run: ${{ github.event.inputs.dry_run || 'false' }}" >> $GITHUB_STEP_SUMMARY

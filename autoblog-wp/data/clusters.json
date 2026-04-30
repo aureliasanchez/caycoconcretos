@@ -1,0 +1,170 @@
+{
+  "clusters": [
+    {
+      "id": "tecnico-normativo",
+      "name": "Técnico / Normativo",
+      "wpCategoryId": 6,
+      "wpCategorySlug": "calidad",
+      "wpCategoryLabel": "Calidad",
+      "weight": 2,
+      "description": "Normas NMX, f'c, MR, resistencias, ensayos, control de calidad, especificaciones técnicas",
+      "internalLinks": [
+        "/tipos-concreto.html",
+        "/guia-tipos-concreto.html",
+        "/guia-seleccion-concreto.html",
+        "/services.html",
+        "/contact.html"
+      ]
+    },
+    {
+      "id": "innovacion",
+      "name": "Innovación / Concretos especiales",
+      "wpCategoryId": 5,
+      "wpCategorySlug": "innovacion",
+      "wpCategoryLabel": "Innovación",
+      "weight": 2,
+      "description": "Concretos especiales: antimicrobiano, permeable, autocompactante (SCC), arquitectónico, color integral, ligero, alta resistencia",
+      "internalLinks": [
+        "/concretos-innovacion.html",
+        "/tipos-concreto.html",
+        "/services.html",
+        "/contact.html"
+      ]
+    },
+    {
+      "id": "geo-zonas",
+      "name": "Geo-zonas (5 sucursales)",
+      "wpCategoryId": 8,
+      "wpCategorySlug": "construccion",
+      "wpCategoryLabel": "Construcción",
+      "weight": 2,
+      "description": "Cobertura específica por sucursal: Tulancingo (Hgo), Pachuca (Hgo), Huauchinango (Pue), Querétaro (Qro), Zumpango (EdoMéx)",
+      "internalLinks": [
+        "/ubicacion-tulancingo.html",
+        "/ubicacion-pachuca.html",
+        "/ubicacion-huauchinango.html",
+        "/ubicacion-queretaro.html",
+        "/ubicacion-zumpango.html",
+        "/contact.html"
+      ]
+    },
+    {
+      "id": "tipos-proyecto",
+      "name": "Tipos de Proyecto",
+      "wpCategoryId": 8,
+      "wpCategorySlug": "construccion",
+      "wpCategoryLabel": "Construcción",
+      "weight": 2,
+      "description": "Data centers, naves industriales, parques industriales, residencial vertical, fraccionamientos, infraestructura, hospitales, pisos industriales",
+      "internalLinks": [
+        "/services.html",
+        "/proyects.html",
+        "/tipos-concreto.html",
+        "/contact.html"
+      ]
+    },
+    {
+      "id": "casos-cliente",
+      "name": "Casos de Cliente",
+      "wpCategoryId": 7,
+      "wpCategorySlug": "compromiso",
+      "wpCategoryLabel": "Compromiso",
+      "weight": 1,
+      "description": "Constructoras, desarrolladores inmobiliarios, arquitectos, gobierno, autoconstrucción, asesoría técnica",
+      "internalLinks": [
+        "/asesoria-capacitacion.html",
+        "/about.html",
+        "/proyects.html",
+        "/contact.html"
+      ]
+    },
+    {
+      "id": "comparativas-decision",
+      "name": "Comparativas y Decisión",
+      "wpCategoryId": 9,
+      "wpCategorySlug": "valor",
+      "wpCategoryLabel": "Valor",
+      "weight": 1,
+      "description": "Premezclado vs hecho en obra, tiro directo vs bombeo, decisión de compra, ROI, planeación de obra, comparativas técnicas y económicas",
+      "internalLinks": [
+        "/services.html",
+        "/bombeo-concreto.html",
+        "/guia-seleccion-concreto.html",
+        "/contact.html"
+      ]
+    }
+  ],
+  "globals": {
+    "company": "Cayco Concretos",
+    "legalName": "CAYCO Construcción S.A. de C.V.",
+    "yearsExperience": 12,
+    "certifications": [
+      "Distintivo C PRO CEMEX (solo sucursal Querétaro)",
+      "Miembros de AMCIAC",
+      "Miembros de CANACINTRA",
+      "Miembros de IMCYC"
+    ],
+    "siteUrl": "https://cayco.mx",
+    "blogUrl": "https://cayco.mx/blog",
+    "logo": "https://cayco.mx/img/logo/logoRojo.png",
+    "ga4Id": "G-1G027QTJ1Y",
+    "branches": [
+      {
+        "id": "tulancingo",
+        "name": "Tulancingo (Matriz)",
+        "state": "Hidalgo",
+        "address": "Santiago Tulantepec 200, San Francisco, Cerezo, 43669 Tulancingo, Hgo.",
+        "phone": "(775) 753 38 11",
+        "phoneRaw": "527757533811",
+        "waNumber": "527757533811",
+        "zones": ["Tulancingo", "Tulancingo de Bravo", "Acaxochitlán", "Cuautepec"],
+        "url": "/ubicacion-tulancingo.html"
+      },
+      {
+        "id": "pachuca",
+        "name": "Pachuca",
+        "state": "Hidalgo",
+        "address": "Boulevard Las Torres S/N, San Isidro, 42185 Hgo.",
+        "phone": "(771) 143 63 26",
+        "phoneRaw": "527711436326",
+        "waNumber": "527711436326",
+        "zones": ["Pachuca", "Mineral de la Reforma", "Tizayuca"],
+        "url": "/ubicacion-pachuca.html"
+      },
+      {
+        "id": "huauchinango",
+        "name": "Huauchinango",
+        "state": "Puebla",
+        "address": "Cuacuila - Xaltepec, 73173 Huauchinango, Pue.",
+        "phone": "(776) 767 83 35",
+        "phoneRaw": "527767678335",
+        "waNumber": "527767678335",
+        "zones": ["Huauchinango", "Xicotepec", "Sierra Norte"],
+        "url": "/ubicacion-huauchinango.html"
+      },
+      {
+        "id": "queretaro",
+        "name": "Querétaro",
+        "state": "Querétaro",
+        "address": "Luis Donaldo Colosio 257-274, San José el Alto, 76147 Qro.",
+        "phone": "(442) 439 7563",
+        "phoneRaw": "524424397563",
+        "waNumber": "524424397563",
+        "specialBadge": "Distintivo C PRO CEMEX",
+        "zones": ["Zibatá", "Zákia", "Milenio III", "Juriquilla", "El Marqués", "Campanario", "Corregidora", "Sta. Rosa Jáuregui", "San José el Alto", "El Refugio"],
+        "url": "/ubicacion-queretaro.html"
+      },
+      {
+        "id": "zumpango",
+        "name": "Zumpango",
+        "state": "Estado de México",
+        "address": "Ex-Hacienda Guadalupe, 55630 Méx.",
+        "phone": "(566) 672 2875",
+        "phoneRaw": "525666722875",
+        "waNumber": "525666722875",
+        "zones": ["Zumpango", "Tecámac", "Huehuetoca", "Coyotepec"],
+        "url": "/ubicacion-zumpango.html"
+      }
+    ]
+  }
+}

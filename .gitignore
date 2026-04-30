@@ -1,0 +1,23 @@
+# Credenciales - NUNCA subir al repositorio
+ACCESOS.md
+
+# Directorios del editor y herramientas
+.vscode/
+.claude/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+nul
+
+# Archivos de analytics exportados
+*.csv
+
+# Archivos comprimidos
+*.zip
+
+# Autoblog WP
+autoblog-wp/node_modules/
+autoblog-wp/logs/
+autoblog-wp/package-lock.json
+node_modules/
