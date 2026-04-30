@@ -99,20 +99,39 @@ function authHeader() {
   return 'Basic ' + Buffer.from(credentials).toString('base64');
 }
 
+function normalizeWpUrl(rawUrl) {
+  if (!rawUrl) return '';
+  // Quita trailing slash y espacios
+  let u = String(rawUrl).trim().replace(/\/+$/, '');
+  // Si viene sin protocolo, añade https
+  if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+  return u;
+}
+
 async function wpFetch(endpoint, options = {}) {
-  const url = `${process.env.WP_URL}/wp-json/wp/v2${endpoint}`;
-  const resp = await fetch(url, {
-    ...options,
-    headers: {
-      'Authorization': authHeader(),
-      'Accept': 'application/json',
-      ...(options.body && typeof options.body === 'string' ? { 'Content-Type': 'application/json' } : {}),
-      ...options.headers
-    }
-  });
+  const baseUrl = normalizeWpUrl(process.env.WP_URL);
+  const url = `${baseUrl}/wp-json/wp/v2${endpoint}`;
+  let resp;
+  try {
+    resp = await fetch(url, {
+      ...options,
+      redirect: 'follow',
+      headers: {
+        'Authorization': authHeader(),
+        'Accept': 'application/json',
+        'User-Agent': 'Cayco-Autoblog/1.0 (+https://github.com/teseodataweb/caycoconcretos)',
+        ...(options.body && typeof options.body === 'string' ? { 'Content-Type': 'application/json' } : {}),
+        ...options.headers
+      }
+    });
+  } catch (err) {
+    // Node 20 fetch: el detalle real (ECONNREFUSED, ENOTFOUND, SSL, etc) está en err.cause
+    const cause = err.cause ? ` (cause: ${err.cause.code || err.cause.message || JSON.stringify(err.cause).slice(0,200)})` : '';
+    throw new Error(`Network error fetching ${url}: ${err.message}${cause}`);
+  }
   if (!resp.ok) {
     const errBody = await resp.text();
-    throw new Error(`WP API ${resp.status} ${resp.statusText} en ${endpoint}: ${errBody.slice(0, 300)}`);
+    throw new Error(`WP API ${resp.status} ${resp.statusText} en ${url}: ${errBody.slice(0, 300)}`);
   }
   return resp.json();
 }
@@ -121,19 +140,30 @@ async function getExistingSlugsFromWp() {
   // Pagea para obtener todos los slugs existentes (drafts + published)
   const slugs = new Set();
   for (let page = 1; page <= 20; page++) {
+    let posts;
     try {
-      const posts = await wpFetch(`/posts?per_page=100&status=any&_fields=id,slug&page=${page}`);
-      if (!Array.isArray(posts) || posts.length === 0) break;
-      posts.forEach(p => slugs.add(p.slug));
-      if (posts.length < 100) break;
+      posts = await wpFetch(`/posts?per_page=100&status=any&_fields=id,slug&page=${page}`);
     } catch (err) {
-      // Si falla por permisos en status=any, intentar solo published
-      if (page === 1 && err.message.includes('401')) {
-        const pubPosts = await wpFetch(`/posts?per_page=100&_fields=id,slug&page=1`);
-        pubPosts.forEach(p => slugs.add(p.slug));
+      // Errores de red (DNS, SSL, timeout) → abortar fuerte. No queremos seguir y crear duplicados.
+      if (err.message.startsWith('Network error')) {
+        throw err;
       }
-      break;
+      // 401/403 sobre status=any: probablemente permisos. Intenta solo published.
+      if (page === 1 && (err.message.includes('401') || err.message.includes('403'))) {
+        try {
+          posts = await wpFetch(`/posts?per_page=100&_fields=id,slug&page=1`);
+        } catch (e2) {
+          if (e2.message.startsWith('Network error')) throw e2;
+          throw new Error(`No se pudo listar posts del WP (probablemente credenciales o permisos): ${e2.message}`);
+        }
+      } else {
+        // Otro error en páginas subsecuentes — terminamos paginación
+        break;
+      }
     }
+    if (!Array.isArray(posts) || posts.length === 0) break;
+    posts.forEach(p => slugs.add(p.slug));
+    if (posts.length < 100) break;
   }
   return slugs;
 }

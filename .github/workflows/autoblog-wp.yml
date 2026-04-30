@@ -59,6 +59,47 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Diagnose WP connectivity
+        if: github.event.inputs.dry_run != 'true'
+        env:
+          WP_URL: ${{ secrets.WP_URL }}
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          set +e
+          # Sanitizar trailing slash (igual que hace el script)
+          BASE_URL="${WP_URL%/}"
+          echo "🔎 Probando conectividad a: $BASE_URL"
+          echo ""
+
+          echo "1️⃣  Resolución DNS:"
+          host "$(echo $BASE_URL | sed -E 's|^https?://([^/]+).*|\1|')" || nslookup "$(echo $BASE_URL | sed -E 's|^https?://([^/]+).*|\1|')" || true
+          echo ""
+
+          echo "2️⃣  GET /wp-json (root API discovery, sin auth):"
+          curl -sS -o /tmp/wpdiag.txt -w "HTTP %{http_code} | size %{size_download}b | time %{time_total}s | URL %{url_effective}\n" \
+            -L --max-time 30 "$BASE_URL/wp-json/" || echo "❌ root API no responde"
+          head -c 200 /tmp/wpdiag.txt; echo ""
+          echo ""
+
+          echo "3️⃣  GET /wp-json/wp/v2/users/me (con auth — debe responder 200 con tus datos):"
+          curl -sS -o /tmp/wpme.txt -w "HTTP %{http_code} | size %{size_download}b\n" \
+            -L --max-time 30 \
+            -u "$WP_USERNAME:$WP_APP_PASSWORD" \
+            "$BASE_URL/wp-json/wp/v2/users/me" || echo "❌ users/me no responde"
+          head -c 400 /tmp/wpme.txt; echo ""
+          echo ""
+
+          echo "4️⃣  GET /wp-json/wp/v2/categories (con auth):"
+          curl -sS -o /tmp/wpcats.txt -w "HTTP %{http_code} | size %{size_download}b\n" \
+            -L --max-time 30 \
+            -u "$WP_USERNAME:$WP_APP_PASSWORD" \
+            "$BASE_URL/wp-json/wp/v2/categories?per_page=2" || echo "❌ categories no responde"
+          head -c 300 /tmp/wpcats.txt; echo ""
+
+          echo ""
+          echo "✅ Diagnóstico terminado. Si los HTTP code son 200, todo bien."
+
       - name: Generate post(s) and publish to WordPress
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
