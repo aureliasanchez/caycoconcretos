@@ -6,7 +6,9 @@
   "scripts": {
     "autoblog": "node scripts/generate-blog.js --count 1",
     "autoblog:dry": "node scripts/generate-blog.js --count 1 --dry-run",
-    "autoblog:batch": "node scripts/generate-blog.js --count 3"
+    "autoblog:batch": "node scripts/generate-blog.js --count 3",
+    "upload-images": "node scripts/upload-images.js",
+    "upload-images:dry": "node scripts/upload-images.js --dry-run"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.79.0",

@@ -29,8 +29,10 @@ const { buildSystemPrompt, buildUserPrompt } = require('./prompts');
 const ROOT = path.resolve(__dirname, '..');
 const TOPICS_PATH = path.join(ROOT, 'data', 'topics-pool.json');
 const CLUSTERS_PATH = path.join(ROOT, 'data', 'clusters.json');
+const IMAGE_POOL_PATH = path.join(ROOT, 'data', 'image-pool.json');
 const LOG_PATH = path.join(ROOT, 'logs', 'autoblog-log.json');
 const PUBLISHED_SLUGS_CACHE = path.join(ROOT, 'logs', 'published-slugs.json');
+const IMAGE_USAGE_CACHE = path.join(ROOT, 'logs', 'image-usage.json');
 
 const MODEL = 'claude-sonnet-4-5-20250929';
 const MAX_TOKENS = 8192;
@@ -192,7 +194,7 @@ async function findOrCreateTags(tagSlugs) {
   return ids;
 }
 
-async function createPost({ title, slug, content, excerpt, status, categoryIds, tagIds, metaDesc, focusKw }) {
+async function createPost({ title, slug, content, excerpt, status, categoryIds, tagIds, metaDesc, focusKw, featuredMedia }) {
   const body = {
     title,
     slug,
@@ -206,10 +208,45 @@ async function createPost({ title, slug, content, excerpt, status, categoryIds, 
       _yoast_wpseo_focuskw: focusKw
     }
   };
+  if (featuredMedia) body.featured_media = featuredMedia;
   return wpFetch('/posts', {
     method: 'POST',
     body: JSON.stringify(body)
   });
+}
+
+// ────────────────────────────────────────────────────────────────────
+// IMAGE POOL — rotación de featured images (IDs ya en Media Library de WP)
+// ────────────────────────────────────────────────────────────────────
+function loadImagePool() {
+  if (!fs.existsSync(IMAGE_POOL_PATH)) return [];
+  try {
+    const data = readJson(IMAGE_POOL_PATH);
+    return Array.isArray(data.images) ? data.images : [];
+  } catch { return []; }
+}
+
+function loadImageUsage() {
+  if (!fs.existsSync(IMAGE_USAGE_CACHE)) return {};
+  try { return readJson(IMAGE_USAGE_CACHE); } catch { return {}; }
+}
+
+function saveImageUsage(usage) {
+  ensureDir(path.dirname(IMAGE_USAGE_CACHE));
+  writeJson(IMAGE_USAGE_CACHE, usage);
+}
+
+function pickFeaturedImage(pool, usage, clusterId) {
+  if (!pool.length) return null;
+  // Filtra imágenes que coincidan con el cluster si tienen tag, si no usa todas
+  const clusterMatches = pool.filter(img => Array.isArray(img.clusters) && img.clusters.includes(clusterId));
+  const candidates = clusterMatches.length ? clusterMatches : pool;
+  // Selecciona la menos usada (para rotación uniforme)
+  const sorted = [...candidates].sort((a, b) => (usage[a.id] || 0) - (usage[b.id] || 0));
+  // Entre las menos usadas, elige al azar para no ser determinista
+  const minCount = usage[sorted[0].id] || 0;
+  const tied = sorted.filter(img => (usage[img.id] || 0) === minCount);
+  return tied[Math.floor(Math.random() * tied.length)];
 }
 
 // ────────────────────────────────────────────────────────────────────
@@ -323,6 +360,15 @@ async function main() {
   pool = shuffle(pool);
   const selected = pool.slice(0, COUNT);
 
+  // Pool de imágenes (puede estar vacío si aún no se subió)
+  const imagePool = loadImagePool();
+  const imageUsage = loadImageUsage();
+  if (imagePool.length === 0) {
+    console.log('   ⚠ Pool de imágenes vacío — los posts se crearán sin featured image. Sube imágenes a Media Library de WP y popula data/image-pool.json para activar.');
+  } else {
+    console.log(`   🖼  Pool de imágenes: ${imagePool.length} disponibles`);
+  }
+
   let generated = 0;
   let failed = 0;
   let totalCost = 0;
@@ -426,6 +472,11 @@ async function main() {
         });
         console.log(`  ✅ DRY RUN — preview: logs/dry-run-${topic.slug}.json (${wordCount} palabras, ${faqs.length} FAQs, ${allTagSlugs.length} tags)`);
       } else {
+        // Selecciona featured image del pool (si hay)
+        const featuredImg = pickFeaturedImage(imagePool, imageUsage, cluster.id);
+        const featuredMedia = featuredImg ? featuredImg.id : null;
+        if (featuredImg) console.log(`  🖼  Featured: media ID ${featuredImg.id} (${featuredImg.alt || 'sin alt'})`);
+
         const post = await createPost({
           title: data.title,
           slug: topic.slug,
@@ -435,10 +486,18 @@ async function main() {
           categoryIds: [cluster.wpCategoryId],
           tagIds,
           metaDesc: data.metaDescription || '',
-          focusKw
+          focusKw,
+          featuredMedia
         });
         postUrl = post.link;
         postId = post.id;
+
+        // Registrar uso de la imagen
+        if (featuredImg) {
+          imageUsage[featuredImg.id] = (imageUsage[featuredImg.id] || 0) + 1;
+          saveImageUsage(imageUsage);
+        }
+
         console.log(`  ✅ Post creado: ID ${postId} — ${postUrl}`);
         console.log(`     ${wordCount} palabras, ${faqs.length} FAQs, ${tagIds.length} tags, status=${POST_STATUS}`);
       }

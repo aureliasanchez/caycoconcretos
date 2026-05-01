@@ -210,13 +210,48 @@ Editar `scripts/prompts.js`:
 - `BASE_PERSONA` → voz global
 - `CLUSTER_PROMPT_OVERRIDES[id]` → enfoque por cluster
 
-### 9.4 Imágenes featured (próxima iteración)
+### 9.4 Imágenes featured automáticas
 
-Hoy los posts se crean sin `featured_media`. Para agregar:
-1. Subir un pool de imágenes a Media Library de WP manualmente (ej. 15 fotos de obras Cayco)
-2. Anotar IDs de cada imagen
-3. Agregar `imageIds: [123, 456, 789, ...]` al script
-4. `pickImage()` rota entre IDs y se pasa como `featured_media` en el POST
+El autoblog asigna featured image rotando entre un pool de imágenes ya subidas a la Media Library de WordPress. El pool se define en `data/image-pool.json`.
+
+**Opción A — Imágenes ya en Media Library del WP** (más rápido si Cayco ya tiene fotos)
+
+1. WP Admin → Media → click en una imagen → la URL incluye `&item=ID`. Anota el ID.
+2. Edita `data/image-pool.json` y agrega entradas:
+   ```json
+   {
+     "images": [
+       { "id": 234, "alt": "obra concreto Querétaro", "clusters": ["geo-zonas", "tipos-proyecto"] },
+       { "id": 287, "alt": "planta dosificadora Tulancingo", "clusters": ["tecnico-normativo"] },
+       { "id": 312, "alt": "concreto premezclado bombeo", "clusters": [] }
+     ]
+   }
+   ```
+   - `clusters: []` o ausente → la imagen se puede usar en cualquier cluster
+   - `clusters: ["geo-zonas"]` → solo se usa en posts de ese cluster
+
+**Opción B — Subir imágenes desde el repo (script automático)**
+
+1. Pon imágenes en una carpeta (ej. `img/blog-pool/`). Convención opcional para taggear por cluster:
+   ```
+   planta-tulancingo__cluster-tecnico-normativo.jpg
+   data-center-queretaro__cluster-tipos-proyecto.jpg
+   colado-bombeo.jpg                                  ← sin cluster, sirve para todos
+   ```
+2. Ejecuta:
+   ```bash
+   cd autoblog-wp
+   WP_URL=https://cayco.mx/blog WP_USERNAME=cayco WP_APP_PASSWORD="..." \
+     npm run upload-images -- --dir ../img/blog-pool
+   ```
+3. El script sube cada imagen a Media Library, anota su ID, y popula `data/image-pool.json` automáticamente.
+4. Commitea el `image-pool.json` actualizado.
+
+**Cómo rota el bot**
+
+- Filtra imágenes que coincidan con el cluster del post (si tienen tag); si ninguna coincide, usa todas
+- Selecciona la **menos usada** (rotación uniforme — `logs/image-usage.json` lleva la cuenta)
+- Si el pool está vacío, el post se crea sin featured image (no falla)
 
 ---
 
