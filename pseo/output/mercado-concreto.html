@@ -138,6 +138,18 @@
       /* Badge */
       .mkt-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(211,47,47,.2); border:1px solid var(--accent); color:#fff; padding:8px 20px; border-radius:50px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:25px; }
 
+      /* Teseo Intelligence Banner */
+      .teseo-intel { display:flex; align-items:center; gap:24px; background:linear-gradient(95deg,#1f282d 0%, #2a353c 100%); border-left:4px solid var(--accent); padding:28px 32px; margin:40px 0 0; box-shadow:0 6px 28px rgba(0,0,0,.08); position:relative; overflow:hidden; }
+      .teseo-intel::after { content:''; position:absolute; right:-40px; top:50%; transform:translateY(-50%); width:200px; height:200px; background:radial-gradient(circle, rgba(211,47,47,.22) 0%, transparent 70%); pointer-events:none; }
+      .teseo-intel-icon { width:64px; height:64px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:rgba(211,47,47,.22); border-radius:50%; position:relative; z-index:2; }
+      .teseo-intel-icon i { color:var(--accent); font-size:24px; }
+      .teseo-intel-body { flex:1; position:relative; z-index:2; }
+      .teseo-intel-tag { font-size:11px; text-transform:uppercase; letter-spacing:2.5px; color:var(--accent); font-weight:800; display:block; margin-bottom:8px; }
+      .teseo-intel-text { color:rgba(255,255,255,.88); font-size:14px; line-height:175%; margin:0 0 12px; font-family:'Raleway',sans-serif; }
+      .teseo-intel-text strong { color:#fff; font-weight:700; }
+      .teseo-intel-link { font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--accent); font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:.25s; padding:8px 18px; border:1px solid var(--accent); border-radius:4px; }
+      .teseo-intel-link:hover { color:#fff; background:var(--accent); }
+
       /* Responsive */
       @media(max-width:992px) {
         .mkt-hero { padding:140px 0 80px; }
@@ -145,6 +157,10 @@
         .mkt-stat-item:not(:last-child) { border-right:none; border-bottom:1px solid rgba(0,0,0,.06); }
         .mkt-nav { position:static; overflow-x:auto; flex-wrap:nowrap; }
         .mkt-cta { padding:40px 20px; }
+      }
+      @media(max-width:768px) {
+        .teseo-intel { flex-direction:column; text-align:center; padding:26px 22px; gap:16px; }
+        .teseo-intel-link { justify-content:center; }
       }
       @media(max-width:576px) {
         .mkt-hero h1 { font-size:26px; }
@@ -161,8 +177,14 @@
     {"@context":"https://schema.org","@type":"Organization","name":"CAYCO Concreto Premezclado","url":"https://cayco.mx","description":"Productor de concreto premezclado con 5 sucursales en Querétaro, Hidalgo, Puebla y Estado de México. Único con Distintivo C PRO CEMEX en Querétaro.","numberOfEmployees":{"@type":"QuantitativeValue","minValue":50},"areaServed":["Querétaro","Hidalgo","Puebla","Estado de México"],"memberOf":["CANACINTRA","AMCI","IMCYC"]}
     </script>
     <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Dataset","name":"Mercado de Concreto Premezclado — CAYCO 2026","description":"Conjunto de datos de demanda (m³), valor de mercado, proyectos verificados, zonificación y especificaciones técnicas del mercado de concreto premezclado en Querétaro, Hidalgo, Puebla y Estado de México.","url":"https://cayco.mx/mercado-concreto/","keywords":["concreto premezclado","mercado de concreto","demanda de concreto","Querétaro","Hidalgo","Puebla"],"spatialCoverage":["Querétaro","Hidalgo","Puebla","Estado de México"],"temporalCoverage":"2026","creator":{"@type":"Organization","name":"Teseo Data Lab — Unidad de Inteligencia de Mercado","url":"https://teseodata.com","description":"Inteligencia de datos, modelado econométrico y desarrollo tecnológico para la industria del concreto y la construcción en México.","sameAs":["https://www.linkedin.com/company/teseo-data-center/","https://www.instagram.com/teseo_data_lab/","https://www.facebook.com/teseodatalab"]},"publisher":{"@type":"Organization","name":"CAYCO Concreto Premezclado","url":"https://cayco.mx"},"provider":{"@type":"Organization","name":"Teseo Data Lab","url":"https://teseodata.com"},"license":"https://teseodata.com"}
+    </script>
+    <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://cayco.mx/"},{"@type":"ListItem","position":2,"name":"Mercado de Concreto","item":"https://cayco.mx/mercado-concreto/"}]}
     </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","url":"https://cayco.mx/","name":"CAYCO Concretos","inLanguage":"es-MX","publisher":{"@type":"Organization","name":"CAYCO Concreto Premezclado","url":"https://cayco.mx"},"provider":{"@type":"Organization","name":"Teseo Data Lab","url":"https://teseodata.com","description":"Inteligencia de datos, desarrollo tecnológico e infraestructura digital para CAYCO Concretos. Unidad de Inteligencia de Mercado para la industria del concreto en México.","sameAs":["https://www.linkedin.com/company/teseo-data-center/","https://www.instagram.com/teseo_data_lab/","https://www.facebook.com/teseodatalab"]}}
+</script>
 </head>
 
 <body>
@@ -234,6 +256,18 @@
                 </div></div>
             </div>
         </div>
+
+        <!-- ═══ TESEO MARKET INTELLIGENCE ATTRIBUTION ═══ -->
+        <aside class="teseo-intel" aria-label="Fuente de los datos de mercado">
+            <div class="teseo-intel-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="teseo-intel-body">
+                <span class="teseo-intel-tag">Inteligencia de Mercado · Data Driven</span>
+                <p class="teseo-intel-text">Los datos de demanda (m³), valor de mercado, proyectos verificados y zonificación presentados en esta página son producidos y mantenidos por la <strong>Unidad de Inteligencia de Mercado de Teseo Data Lab</strong> — partner tecnológico de CAYCO en análisis sectorial, modelado econométrico y monitoreo de obra pública y privada en México.</p>
+                <a href="https://teseodata.com" target="_blank" rel="noopener" title="Teseo Data Lab — Inteligencia de datos para la industria del concreto" class="teseo-intel-link">
+                    Conoce a Teseo Data Lab <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </aside>
     </div>
 
     <!-- ═══ NAV PILLS ═══ -->
@@ -792,7 +826,7 @@
                 </div>
             </div></div></div>
         </div>
-        <div class="container-fluid"><div class="mil-footer-bottom"><p class="mil-light-soft mil-mb-15">&copy; 2026 Cayco. Todos los derechos reservados.</p></div></div>
+        <div class="container-fluid"><div class="mil-footer-bottom"><p class="mil-light-soft mil-mb-15">&copy; 2026 Cayco. Todos los derechos reservados. &middot; Powered by <a href="https://teseodata.com" target="_blank" rel="noopener" title="Teseo Data Lab — Inteligencia de datos y desarrollo tecnologico para CAYCO Concretos" style="color:#d32f2f;text-decoration:none;font-weight:700">Teseo Data Lab</a></p></div></div>
     </footer>
 
     <a href="https://wa.me/527711436326?text=Hola%2C%20me%20interesa%20cotizar%20concreto%20premezclado" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>

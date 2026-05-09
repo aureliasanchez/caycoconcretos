@@ -186,7 +186,7 @@ function footer(suc) {
                 </div>
             </div></div></div>
         </div>
-        <div class="container-fluid"><div class="mil-footer-bottom"><p class="mil-light-soft mil-mb-15">&copy; 2026 Cayco. Todos los derechos reservados.</p></div></div>
+        <div class="container-fluid"><div class="mil-footer-bottom"><p class="mil-light-soft mil-mb-15">&copy; 2026 Cayco. Todos los derechos reservados. &middot; Powered by <a href="https://teseodata.com" target="_blank" rel="noopener" title="Teseo Data Lab — Inteligencia de datos y desarrollo tecnologico para CAYCO Concretos" style="color:#d32f2f;text-decoration:none;font-weight:700">Teseo Data Lab</a></p></div></div>
     </footer>
     <a href="https://wa.me/${waNum}?text=${encodeURIComponent('Hola, me interesa cotizar concreto premezclado')}" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <script src="/app.js"></script>
